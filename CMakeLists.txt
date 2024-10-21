@@ -81,4 +81,4 @@ add_executable(xv6_riscv
         user/zombie.c
         LICENSE
         Makefile
-        README)
+        README kernel/child_processes.h user/cps.c)

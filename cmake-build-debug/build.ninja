@@ -55,8 +55,6 @@ build CMakeFiles/xv6_riscv.dir/kernel/bio.c.o: C_COMPILER__xv6_riscv_Debug /User
   INCLUDES = -I/Users/seyyed/xv6/xv6-riscv/kernel -I/Users/seyyed/xv6/xv6-riscv/user
   OBJECT_DIR = CMakeFiles/xv6_riscv.dir
   OBJECT_FILE_DIR = CMakeFiles/xv6_riscv.dir/kernel
-  TARGET_COMPILE_PDB = CMakeFiles/xv6_riscv.dir/
-  TARGET_PDB = xv6_riscv.pdb
 
 build CMakeFiles/xv6_riscv.dir/kernel/console.c.o: C_COMPILER__xv6_riscv_Debug /Users/seyyed/xv6/xv6-riscv/kernel/console.c || cmake_object_order_depends_target_xv6_riscv
   DEP_FILE = CMakeFiles/xv6_riscv.dir/kernel/console.c.o.d
@@ -64,8 +62,6 @@ build CMakeFiles/xv6_riscv.dir/kernel/console.c.o: C_COMPILER__xv6_riscv_Debug /
   INCLUDES = -I/Users/seyyed/xv6/xv6-riscv/kernel -I/Users/seyyed/xv6/xv6-riscv/user
   OBJECT_DIR = CMakeFiles/xv6_riscv.dir
   OBJECT_FILE_DIR = CMakeFiles/xv6_riscv.dir/kernel
-  TARGET_COMPILE_PDB = CMakeFiles/xv6_riscv.dir/
-  TARGET_PDB = xv6_riscv.pdb
 
 build CMakeFiles/xv6_riscv.dir/kernel/exec.c.o: C_COMPILER__xv6_riscv_Debug /Users/seyyed/xv6/xv6-riscv/kernel/exec.c || cmake_object_order_depends_target_xv6_riscv
   DEP_FILE = CMakeFiles/xv6_riscv.dir/kernel/exec.c.o.d
@@ -73,8 +69,6 @@ build CMakeFiles/xv6_riscv.dir/kernel/exec.c.o: C_COMPILER__xv6_riscv_Debug /Use
   INCLUDES = -I/Users/seyyed/xv6/xv6-riscv/kernel -I/Users/seyyed/xv6/xv6-riscv/user
   OBJECT_DIR = CMakeFiles/xv6_riscv.dir
   OBJECT_FILE_DIR = CMakeFiles/xv6_riscv.dir/kernel
-  TARGET_COMPILE_PDB = CMakeFiles/xv6_riscv.dir/
-  TARGET_PDB = xv6_riscv.pdb
 
 build CMakeFiles/xv6_riscv.dir/kernel/file.c.o: C_COMPILER__xv6_riscv_Debug /Users/seyyed/xv6/xv6-riscv/kernel/file.c || cmake_object_order_depends_target_xv6_riscv
   DEP_FILE = CMakeFiles/xv6_riscv.dir/kernel/file.c.o.d
@@ -82,8 +76,6 @@ build CMakeFiles/xv6_riscv.dir/kernel/file.c.o: C_COMPILER__xv6_riscv_Debug /Use
   INCLUDES = -I/Users/seyyed/xv6/xv6-riscv/kernel -I/Users/seyyed/xv6/xv6-riscv/user
   OBJECT_DIR = CMakeFiles/xv6_riscv.dir
   OBJECT_FILE_DIR = CMakeFiles/xv6_riscv.dir/kernel
-  TARGET_COMPILE_PDB = CMakeFiles/xv6_riscv.dir/
-  TARGET_PDB = xv6_riscv.pdb
 
 build CMakeFiles/xv6_riscv.dir/kernel/fs.c.o: C_COMPILER__xv6_riscv_Debug /Users/seyyed/xv6/xv6-riscv/kernel/fs.c || cmake_object_order_depends_target_xv6_riscv
   DEP_FILE = CMakeFiles/xv6_riscv.dir/kernel/fs.c.o.d
@@ -91,8 +83,6 @@ build CMakeFiles/xv6_riscv.dir/kernel/fs.c.o: C_COMPILER__xv6_riscv_Debug /Users
   INCLUDES = -I/Users/seyyed/xv6/xv6-riscv/kernel -I/Users/seyyed/xv6/xv6-riscv/user
   OBJECT_DIR = CMakeFiles/xv6_riscv.dir
   OBJECT_FILE_DIR = CMakeFiles/xv6_riscv.dir/kernel
-  TARGET_COMPILE_PDB = CMakeFiles/xv6_riscv.dir/
-  TARGET_PDB = xv6_riscv.pdb
 
 build CMakeFiles/xv6_riscv.dir/kernel/kalloc.c.o: C_COMPILER__xv6_riscv_Debug /Users/seyyed/xv6/xv6-riscv/kernel/kalloc.c || cmake_object_order_depends_target_xv6_riscv
   DEP_FILE = CMakeFiles/xv6_riscv.dir/kernel/kalloc.c.o.d
@@ -100,8 +90,6 @@ build CMakeFiles/xv6_riscv.dir/kernel/kalloc.c.o: C_COMPILER__xv6_riscv_Debug /U
   INCLUDES = -I/Users/seyyed/xv6/xv6-riscv/kernel -I/Users/seyyed/xv6/xv6-riscv/user
   OBJECT_DIR = CMakeFiles/xv6_riscv.dir
   OBJECT_FILE_DIR = CMakeFiles/xv6_riscv.dir/kernel
-  TARGET_COMPILE_PDB = CMakeFiles/xv6_riscv.dir/
-  TARGET_PDB = xv6_riscv.pdb
 
 build CMakeFiles/xv6_riscv.dir/kernel/log.c.o: C_COMPILER__xv6_riscv_Debug /Users/seyyed/xv6/xv6-riscv/kernel/log.c || cmake_object_order_depends_target_xv6_riscv
   DEP_FILE = CMakeFiles/xv6_riscv.dir/kernel/log.c.o.d
@@ -109,8 +97,6 @@ build CMakeFiles/xv6_riscv.dir/kernel/log.c.o: C_COMPILER__xv6_riscv_Debug /User
   INCLUDES = -I/Users/seyyed/xv6/xv6-riscv/kernel -I/Users/seyyed/xv6/xv6-riscv/user
   OBJECT_DIR = CMakeFiles/xv6_riscv.dir
   OBJECT_FILE_DIR = CMakeFiles/xv6_riscv.dir/kernel
-  TARGET_COMPILE_PDB = CMakeFiles/xv6_riscv.dir/
-  TARGET_PDB = xv6_riscv.pdb
 
 build CMakeFiles/xv6_riscv.dir/kernel/main.c.o: C_COMPILER__xv6_riscv_Debug /Users/seyyed/xv6/xv6-riscv/kernel/main.c || cmake_object_order_depends_target_xv6_riscv
   DEP_FILE = CMakeFiles/xv6_riscv.dir/kernel/main.c.o.d
@@ -118,8 +104,6 @@ build CMakeFiles/xv6_riscv.dir/kernel/main.c.o: C_COMPILER__xv6_riscv_Debug /Use
   INCLUDES = -I/Users/seyyed/xv6/xv6-riscv/kernel -I/Users/seyyed/xv6/xv6-riscv/user
   OBJECT_DIR = CMakeFiles/xv6_riscv.dir
   OBJECT_FILE_DIR = CMakeFiles/xv6_riscv.dir/kernel
-  TARGET_COMPILE_PDB = CMakeFiles/xv6_riscv.dir/
-  TARGET_PDB = xv6_riscv.pdb
 
 build CMakeFiles/xv6_riscv.dir/kernel/pipe.c.o: C_COMPILER__xv6_riscv_Debug /Users/seyyed/xv6/xv6-riscv/kernel/pipe.c || cmake_object_order_depends_target_xv6_riscv
   DEP_FILE = CMakeFiles/xv6_riscv.dir/kernel/pipe.c.o.d
@@ -127,8 +111,6 @@ build CMakeFiles/xv6_riscv.dir/kernel/pipe.c.o: C_COMPILER__xv6_riscv_Debug /Use
   INCLUDES = -I/Users/seyyed/xv6/xv6-riscv/kernel -I/Users/seyyed/xv6/xv6-riscv/user
   OBJECT_DIR = CMakeFiles/xv6_riscv.dir
   OBJECT_FILE_DIR = CMakeFiles/xv6_riscv.dir/kernel
-  TARGET_COMPILE_PDB = CMakeFiles/xv6_riscv.dir/
-  TARGET_PDB = xv6_riscv.pdb
 
 build CMakeFiles/xv6_riscv.dir/kernel/plic.c.o: C_COMPILER__xv6_riscv_Debug /Users/seyyed/xv6/xv6-riscv/kernel/plic.c || cmake_object_order_depends_target_xv6_riscv
   DEP_FILE = CMakeFiles/xv6_riscv.dir/kernel/plic.c.o.d
@@ -136,8 +118,6 @@ build CMakeFiles/xv6_riscv.dir/kernel/plic.c.o: C_COMPILER__xv6_riscv_Debug /Use
   INCLUDES = -I/Users/seyyed/xv6/xv6-riscv/kernel -I/Users/seyyed/xv6/xv6-riscv/user
   OBJECT_DIR = CMakeFiles/xv6_riscv.dir
   OBJECT_FILE_DIR = CMakeFiles/xv6_riscv.dir/kernel
-  TARGET_COMPILE_PDB = CMakeFiles/xv6_riscv.dir/
-  TARGET_PDB = xv6_riscv.pdb
 
 build CMakeFiles/xv6_riscv.dir/kernel/printf.c.o: C_COMPILER__xv6_riscv_Debug /Users/seyyed/xv6/xv6-riscv/kernel/printf.c || cmake_object_order_depends_target_xv6_riscv
   DEP_FILE = CMakeFiles/xv6_riscv.dir/kernel/printf.c.o.d
@@ -145,8 +125,6 @@ build CMakeFiles/xv6_riscv.dir/kernel/printf.c.o: C_COMPILER__xv6_riscv_Debug /U
   INCLUDES = -I/Users/seyyed/xv6/xv6-riscv/kernel -I/Users/seyyed/xv6/xv6-riscv/user
   OBJECT_DIR = CMakeFiles/xv6_riscv.dir
   OBJECT_FILE_DIR = CMakeFiles/xv6_riscv.dir/kernel
-  TARGET_COMPILE_PDB = CMakeFiles/xv6_riscv.dir/
-  TARGET_PDB = xv6_riscv.pdb
 
 build CMakeFiles/xv6_riscv.dir/kernel/proc.c.o: C_COMPILER__xv6_riscv_Debug /Users/seyyed/xv6/xv6-riscv/kernel/proc.c || cmake_object_order_depends_target_xv6_riscv
   DEP_FILE = CMakeFiles/xv6_riscv.dir/kernel/proc.c.o.d
@@ -154,8 +132,6 @@ build CMakeFiles/xv6_riscv.dir/kernel/proc.c.o: C_COMPILER__xv6_riscv_Debug /Use
   INCLUDES = -I/Users/seyyed/xv6/xv6-riscv/kernel -I/Users/seyyed/xv6/xv6-riscv/user
   OBJECT_DIR = CMakeFiles/xv6_riscv.dir
   OBJECT_FILE_DIR = CMakeFiles/xv6_riscv.dir/kernel
-  TARGET_COMPILE_PDB = CMakeFiles/xv6_riscv.dir/
-  TARGET_PDB = xv6_riscv.pdb
 
 build CMakeFiles/xv6_riscv.dir/kernel/sleeplock.c.o: C_COMPILER__xv6_riscv_Debug /Users/seyyed/xv6/xv6-riscv/kernel/sleeplock.c || cmake_object_order_depends_target_xv6_riscv
   DEP_FILE = CMakeFiles/xv6_riscv.dir/kernel/sleeplock.c.o.d
@@ -163,8 +139,6 @@ build CMakeFiles/xv6_riscv.dir/kernel/sleeplock.c.o: C_COMPILER__xv6_riscv_Debug
   INCLUDES = -I/Users/seyyed/xv6/xv6-riscv/kernel -I/Users/seyyed/xv6/xv6-riscv/user
   OBJECT_DIR = CMakeFiles/xv6_riscv.dir
   OBJECT_FILE_DIR = CMakeFiles/xv6_riscv.dir/kernel
-  TARGET_COMPILE_PDB = CMakeFiles/xv6_riscv.dir/
-  TARGET_PDB = xv6_riscv.pdb
 
 build CMakeFiles/xv6_riscv.dir/kernel/spinlock.c.o: C_COMPILER__xv6_riscv_Debug /Users/seyyed/xv6/xv6-riscv/kernel/spinlock.c || cmake_object_order_depends_target_xv6_riscv
   DEP_FILE = CMakeFiles/xv6_riscv.dir/kernel/spinlock.c.o.d
@@ -172,8 +146,6 @@ build CMakeFiles/xv6_riscv.dir/kernel/spinlock.c.o: C_COMPILER__xv6_riscv_Debug 
   INCLUDES = -I/Users/seyyed/xv6/xv6-riscv/kernel -I/Users/seyyed/xv6/xv6-riscv/user
   OBJECT_DIR = CMakeFiles/xv6_riscv.dir
   OBJECT_FILE_DIR = CMakeFiles/xv6_riscv.dir/kernel
-  TARGET_COMPILE_PDB = CMakeFiles/xv6_riscv.dir/
-  TARGET_PDB = xv6_riscv.pdb
 
 build CMakeFiles/xv6_riscv.dir/kernel/start.c.o: C_COMPILER__xv6_riscv_Debug /Users/seyyed/xv6/xv6-riscv/kernel/start.c || cmake_object_order_depends_target_xv6_riscv
   DEP_FILE = CMakeFiles/xv6_riscv.dir/kernel/start.c.o.d
@@ -181,8 +153,6 @@ build CMakeFiles/xv6_riscv.dir/kernel/start.c.o: C_COMPILER__xv6_riscv_Debug /Us
   INCLUDES = -I/Users/seyyed/xv6/xv6-riscv/kernel -I/Users/seyyed/xv6/xv6-riscv/user
   OBJECT_DIR = CMakeFiles/xv6_riscv.dir
   OBJECT_FILE_DIR = CMakeFiles/xv6_riscv.dir/kernel
-  TARGET_COMPILE_PDB = CMakeFiles/xv6_riscv.dir/
-  TARGET_PDB = xv6_riscv.pdb
 
 build CMakeFiles/xv6_riscv.dir/kernel/string.c.o: C_COMPILER__xv6_riscv_Debug /Users/seyyed/xv6/xv6-riscv/kernel/string.c || cmake_object_order_depends_target_xv6_riscv
   DEP_FILE = CMakeFiles/xv6_riscv.dir/kernel/string.c.o.d
@@ -190,8 +160,6 @@ build CMakeFiles/xv6_riscv.dir/kernel/string.c.o: C_COMPILER__xv6_riscv_Debug /U
   INCLUDES = -I/Users/seyyed/xv6/xv6-riscv/kernel -I/Users/seyyed/xv6/xv6-riscv/user
   OBJECT_DIR = CMakeFiles/xv6_riscv.dir
   OBJECT_FILE_DIR = CMakeFiles/xv6_riscv.dir/kernel
-  TARGET_COMPILE_PDB = CMakeFiles/xv6_riscv.dir/
-  TARGET_PDB = xv6_riscv.pdb
 
 build CMakeFiles/xv6_riscv.dir/kernel/syscall.c.o: C_COMPILER__xv6_riscv_Debug /Users/seyyed/xv6/xv6-riscv/kernel/syscall.c || cmake_object_order_depends_target_xv6_riscv
   DEP_FILE = CMakeFiles/xv6_riscv.dir/kernel/syscall.c.o.d
@@ -199,8 +167,6 @@ build CMakeFiles/xv6_riscv.dir/kernel/syscall.c.o: C_COMPILER__xv6_riscv_Debug /
   INCLUDES = -I/Users/seyyed/xv6/xv6-riscv/kernel -I/Users/seyyed/xv6/xv6-riscv/user
   OBJECT_DIR = CMakeFiles/xv6_riscv.dir
   OBJECT_FILE_DIR = CMakeFiles/xv6_riscv.dir/kernel
-  TARGET_COMPILE_PDB = CMakeFiles/xv6_riscv.dir/
-  TARGET_PDB = xv6_riscv.pdb
 
 build CMakeFiles/xv6_riscv.dir/kernel/sysfile.c.o: C_COMPILER__xv6_riscv_Debug /Users/seyyed/xv6/xv6-riscv/kernel/sysfile.c || cmake_object_order_depends_target_xv6_riscv
   DEP_FILE = CMakeFiles/xv6_riscv.dir/kernel/sysfile.c.o.d
@@ -208,8 +174,6 @@ build CMakeFiles/xv6_riscv.dir/kernel/sysfile.c.o: C_COMPILER__xv6_riscv_Debug /
   INCLUDES = -I/Users/seyyed/xv6/xv6-riscv/kernel -I/Users/seyyed/xv6/xv6-riscv/user
   OBJECT_DIR = CMakeFiles/xv6_riscv.dir
   OBJECT_FILE_DIR = CMakeFiles/xv6_riscv.dir/kernel
-  TARGET_COMPILE_PDB = CMakeFiles/xv6_riscv.dir/
-  TARGET_PDB = xv6_riscv.pdb
 
 build CMakeFiles/xv6_riscv.dir/kernel/sysproc.c.o: C_COMPILER__xv6_riscv_Debug /Users/seyyed/xv6/xv6-riscv/kernel/sysproc.c || cmake_object_order_depends_target_xv6_riscv
   DEP_FILE = CMakeFiles/xv6_riscv.dir/kernel/sysproc.c.o.d
@@ -217,8 +181,6 @@ build CMakeFiles/xv6_riscv.dir/kernel/sysproc.c.o: C_COMPILER__xv6_riscv_Debug /
   INCLUDES = -I/Users/seyyed/xv6/xv6-riscv/kernel -I/Users/seyyed/xv6/xv6-riscv/user
   OBJECT_DIR = CMakeFiles/xv6_riscv.dir
   OBJECT_FILE_DIR = CMakeFiles/xv6_riscv.dir/kernel
-  TARGET_COMPILE_PDB = CMakeFiles/xv6_riscv.dir/
-  TARGET_PDB = xv6_riscv.pdb
 
 build CMakeFiles/xv6_riscv.dir/kernel/trap.c.o: C_COMPILER__xv6_riscv_Debug /Users/seyyed/xv6/xv6-riscv/kernel/trap.c || cmake_object_order_depends_target_xv6_riscv
   DEP_FILE = CMakeFiles/xv6_riscv.dir/kernel/trap.c.o.d
@@ -226,8 +188,6 @@ build CMakeFiles/xv6_riscv.dir/kernel/trap.c.o: C_COMPILER__xv6_riscv_Debug /Use
   INCLUDES = -I/Users/seyyed/xv6/xv6-riscv/kernel -I/Users/seyyed/xv6/xv6-riscv/user
   OBJECT_DIR = CMakeFiles/xv6_riscv.dir
   OBJECT_FILE_DIR = CMakeFiles/xv6_riscv.dir/kernel
-  TARGET_COMPILE_PDB = CMakeFiles/xv6_riscv.dir/
-  TARGET_PDB = xv6_riscv.pdb
 
 build CMakeFiles/xv6_riscv.dir/kernel/uart.c.o: C_COMPILER__xv6_riscv_Debug /Users/seyyed/xv6/xv6-riscv/kernel/uart.c || cmake_object_order_depends_target_xv6_riscv
   DEP_FILE = CMakeFiles/xv6_riscv.dir/kernel/uart.c.o.d
@@ -235,8 +195,6 @@ build CMakeFiles/xv6_riscv.dir/kernel/uart.c.o: C_COMPILER__xv6_riscv_Debug /Use
   INCLUDES = -I/Users/seyyed/xv6/xv6-riscv/kernel -I/Users/seyyed/xv6/xv6-riscv/user
   OBJECT_DIR = CMakeFiles/xv6_riscv.dir
   OBJECT_FILE_DIR = CMakeFiles/xv6_riscv.dir/kernel
-  TARGET_COMPILE_PDB = CMakeFiles/xv6_riscv.dir/
-  TARGET_PDB = xv6_riscv.pdb
 
 build CMakeFiles/xv6_riscv.dir/kernel/virtio_disk.c.o: C_COMPILER__xv6_riscv_Debug /Users/seyyed/xv6/xv6-riscv/kernel/virtio_disk.c || cmake_object_order_depends_target_xv6_riscv
   DEP_FILE = CMakeFiles/xv6_riscv.dir/kernel/virtio_disk.c.o.d
@@ -244,8 +202,6 @@ build CMakeFiles/xv6_riscv.dir/kernel/virtio_disk.c.o: C_COMPILER__xv6_riscv_Deb
   INCLUDES = -I/Users/seyyed/xv6/xv6-riscv/kernel -I/Users/seyyed/xv6/xv6-riscv/user
   OBJECT_DIR = CMakeFiles/xv6_riscv.dir
   OBJECT_FILE_DIR = CMakeFiles/xv6_riscv.dir/kernel
-  TARGET_COMPILE_PDB = CMakeFiles/xv6_riscv.dir/
-  TARGET_PDB = xv6_riscv.pdb
 
 build CMakeFiles/xv6_riscv.dir/kernel/vm.c.o: C_COMPILER__xv6_riscv_Debug /Users/seyyed/xv6/xv6-riscv/kernel/vm.c || cmake_object_order_depends_target_xv6_riscv
   DEP_FILE = CMakeFiles/xv6_riscv.dir/kernel/vm.c.o.d
@@ -253,8 +209,6 @@ build CMakeFiles/xv6_riscv.dir/kernel/vm.c.o: C_COMPILER__xv6_riscv_Debug /Users
   INCLUDES = -I/Users/seyyed/xv6/xv6-riscv/kernel -I/Users/seyyed/xv6/xv6-riscv/user
   OBJECT_DIR = CMakeFiles/xv6_riscv.dir
   OBJECT_FILE_DIR = CMakeFiles/xv6_riscv.dir/kernel
-  TARGET_COMPILE_PDB = CMakeFiles/xv6_riscv.dir/
-  TARGET_PDB = xv6_riscv.pdb
 
 build CMakeFiles/xv6_riscv.dir/mkfs/mkfs.c.o: C_COMPILER__xv6_riscv_Debug /Users/seyyed/xv6/xv6-riscv/mkfs/mkfs.c || cmake_object_order_depends_target_xv6_riscv
   DEP_FILE = CMakeFiles/xv6_riscv.dir/mkfs/mkfs.c.o.d
@@ -262,8 +216,6 @@ build CMakeFiles/xv6_riscv.dir/mkfs/mkfs.c.o: C_COMPILER__xv6_riscv_Debug /Users
   INCLUDES = -I/Users/seyyed/xv6/xv6-riscv/kernel -I/Users/seyyed/xv6/xv6-riscv/user
   OBJECT_DIR = CMakeFiles/xv6_riscv.dir
   OBJECT_FILE_DIR = CMakeFiles/xv6_riscv.dir/mkfs
-  TARGET_COMPILE_PDB = CMakeFiles/xv6_riscv.dir/
-  TARGET_PDB = xv6_riscv.pdb
 
 build CMakeFiles/xv6_riscv.dir/user/cat.c.o: C_COMPILER__xv6_riscv_Debug /Users/seyyed/xv6/xv6-riscv/user/cat.c || cmake_object_order_depends_target_xv6_riscv
   DEP_FILE = CMakeFiles/xv6_riscv.dir/user/cat.c.o.d
@@ -271,8 +223,6 @@ build CMakeFiles/xv6_riscv.dir/user/cat.c.o: C_COMPILER__xv6_riscv_Debug /Users/
   INCLUDES = -I/Users/seyyed/xv6/xv6-riscv/kernel -I/Users/seyyed/xv6/xv6-riscv/user
   OBJECT_DIR = CMakeFiles/xv6_riscv.dir
   OBJECT_FILE_DIR = CMakeFiles/xv6_riscv.dir/user
-  TARGET_COMPILE_PDB = CMakeFiles/xv6_riscv.dir/
-  TARGET_PDB = xv6_riscv.pdb
 
 build CMakeFiles/xv6_riscv.dir/user/echo.c.o: C_COMPILER__xv6_riscv_Debug /Users/seyyed/xv6/xv6-riscv/user/echo.c || cmake_object_order_depends_target_xv6_riscv
   DEP_FILE = CMakeFiles/xv6_riscv.dir/user/echo.c.o.d
@@ -280,8 +230,6 @@ build CMakeFiles/xv6_riscv.dir/user/echo.c.o: C_COMPILER__xv6_riscv_Debug /Users
   INCLUDES = -I/Users/seyyed/xv6/xv6-riscv/kernel -I/Users/seyyed/xv6/xv6-riscv/user
   OBJECT_DIR = CMakeFiles/xv6_riscv.dir
   OBJECT_FILE_DIR = CMakeFiles/xv6_riscv.dir/user
-  TARGET_COMPILE_PDB = CMakeFiles/xv6_riscv.dir/
-  TARGET_PDB = xv6_riscv.pdb
 
 build CMakeFiles/xv6_riscv.dir/user/forktest.c.o: C_COMPILER__xv6_riscv_Debug /Users/seyyed/xv6/xv6-riscv/user/forktest.c || cmake_object_order_depends_target_xv6_riscv
   DEP_FILE = CMakeFiles/xv6_riscv.dir/user/forktest.c.o.d
@@ -289,8 +237,6 @@ build CMakeFiles/xv6_riscv.dir/user/forktest.c.o: C_COMPILER__xv6_riscv_Debug /U
   INCLUDES = -I/Users/seyyed/xv6/xv6-riscv/kernel -I/Users/seyyed/xv6/xv6-riscv/user
   OBJECT_DIR = CMakeFiles/xv6_riscv.dir
   OBJECT_FILE_DIR = CMakeFiles/xv6_riscv.dir/user
-  TARGET_COMPILE_PDB = CMakeFiles/xv6_riscv.dir/
-  TARGET_PDB = xv6_riscv.pdb
 
 build CMakeFiles/xv6_riscv.dir/user/grep.c.o: C_COMPILER__xv6_riscv_Debug /Users/seyyed/xv6/xv6-riscv/user/grep.c || cmake_object_order_depends_target_xv6_riscv
   DEP_FILE = CMakeFiles/xv6_riscv.dir/user/grep.c.o.d
@@ -298,8 +244,6 @@ build CMakeFiles/xv6_riscv.dir/user/grep.c.o: C_COMPILER__xv6_riscv_Debug /Users
   INCLUDES = -I/Users/seyyed/xv6/xv6-riscv/kernel -I/Users/seyyed/xv6/xv6-riscv/user
   OBJECT_DIR = CMakeFiles/xv6_riscv.dir
   OBJECT_FILE_DIR = CMakeFiles/xv6_riscv.dir/user
-  TARGET_COMPILE_PDB = CMakeFiles/xv6_riscv.dir/
-  TARGET_PDB = xv6_riscv.pdb
 
 build CMakeFiles/xv6_riscv.dir/user/grind.c.o: C_COMPILER__xv6_riscv_Debug /Users/seyyed/xv6/xv6-riscv/user/grind.c || cmake_object_order_depends_target_xv6_riscv
   DEP_FILE = CMakeFiles/xv6_riscv.dir/user/grind.c.o.d
@@ -307,8 +251,6 @@ build CMakeFiles/xv6_riscv.dir/user/grind.c.o: C_COMPILER__xv6_riscv_Debug /User
   INCLUDES = -I/Users/seyyed/xv6/xv6-riscv/kernel -I/Users/seyyed/xv6/xv6-riscv/user
   OBJECT_DIR = CMakeFiles/xv6_riscv.dir
   OBJECT_FILE_DIR = CMakeFiles/xv6_riscv.dir/user
-  TARGET_COMPILE_PDB = CMakeFiles/xv6_riscv.dir/
-  TARGET_PDB = xv6_riscv.pdb
 
 build CMakeFiles/xv6_riscv.dir/user/init.c.o: C_COMPILER__xv6_riscv_Debug /Users/seyyed/xv6/xv6-riscv/user/init.c || cmake_object_order_depends_target_xv6_riscv
   DEP_FILE = CMakeFiles/xv6_riscv.dir/user/init.c.o.d
@@ -316,8 +258,6 @@ build CMakeFiles/xv6_riscv.dir/user/init.c.o: C_COMPILER__xv6_riscv_Debug /Users
   INCLUDES = -I/Users/seyyed/xv6/xv6-riscv/kernel -I/Users/seyyed/xv6/xv6-riscv/user
   OBJECT_DIR = CMakeFiles/xv6_riscv.dir
   OBJECT_FILE_DIR = CMakeFiles/xv6_riscv.dir/user
-  TARGET_COMPILE_PDB = CMakeFiles/xv6_riscv.dir/
-  TARGET_PDB = xv6_riscv.pdb
 
 build CMakeFiles/xv6_riscv.dir/user/kill.c.o: C_COMPILER__xv6_riscv_Debug /Users/seyyed/xv6/xv6-riscv/user/kill.c || cmake_object_order_depends_target_xv6_riscv
   DEP_FILE = CMakeFiles/xv6_riscv.dir/user/kill.c.o.d
@@ -325,8 +265,6 @@ build CMakeFiles/xv6_riscv.dir/user/kill.c.o: C_COMPILER__xv6_riscv_Debug /Users
   INCLUDES = -I/Users/seyyed/xv6/xv6-riscv/kernel -I/Users/seyyed/xv6/xv6-riscv/user
   OBJECT_DIR = CMakeFiles/xv6_riscv.dir
   OBJECT_FILE_DIR = CMakeFiles/xv6_riscv.dir/user
-  TARGET_COMPILE_PDB = CMakeFiles/xv6_riscv.dir/
-  TARGET_PDB = xv6_riscv.pdb
 
 build CMakeFiles/xv6_riscv.dir/user/ln.c.o: C_COMPILER__xv6_riscv_Debug /Users/seyyed/xv6/xv6-riscv/user/ln.c || cmake_object_order_depends_target_xv6_riscv
   DEP_FILE = CMakeFiles/xv6_riscv.dir/user/ln.c.o.d
@@ -334,8 +272,6 @@ build CMakeFiles/xv6_riscv.dir/user/ln.c.o: C_COMPILER__xv6_riscv_Debug /Users/s
   INCLUDES = -I/Users/seyyed/xv6/xv6-riscv/kernel -I/Users/seyyed/xv6/xv6-riscv/user
   OBJECT_DIR = CMakeFiles/xv6_riscv.dir
   OBJECT_FILE_DIR = CMakeFiles/xv6_riscv.dir/user
-  TARGET_COMPILE_PDB = CMakeFiles/xv6_riscv.dir/
-  TARGET_PDB = xv6_riscv.pdb
 
 build CMakeFiles/xv6_riscv.dir/user/ls.c.o: C_COMPILER__xv6_riscv_Debug /Users/seyyed/xv6/xv6-riscv/user/ls.c || cmake_object_order_depends_target_xv6_riscv
   DEP_FILE = CMakeFiles/xv6_riscv.dir/user/ls.c.o.d
@@ -343,8 +279,6 @@ build CMakeFiles/xv6_riscv.dir/user/ls.c.o: C_COMPILER__xv6_riscv_Debug /Users/s
   INCLUDES = -I/Users/seyyed/xv6/xv6-riscv/kernel -I/Users/seyyed/xv6/xv6-riscv/user
   OBJECT_DIR = CMakeFiles/xv6_riscv.dir
   OBJECT_FILE_DIR = CMakeFiles/xv6_riscv.dir/user
-  TARGET_COMPILE_PDB = CMakeFiles/xv6_riscv.dir/
-  TARGET_PDB = xv6_riscv.pdb
 
 build CMakeFiles/xv6_riscv.dir/user/mkdir.c.o: C_COMPILER__xv6_riscv_Debug /Users/seyyed/xv6/xv6-riscv/user/mkdir.c || cmake_object_order_depends_target_xv6_riscv
   DEP_FILE = CMakeFiles/xv6_riscv.dir/user/mkdir.c.o.d
@@ -352,8 +286,6 @@ build CMakeFiles/xv6_riscv.dir/user/mkdir.c.o: C_COMPILER__xv6_riscv_Debug /User
   INCLUDES = -I/Users/seyyed/xv6/xv6-riscv/kernel -I/Users/seyyed/xv6/xv6-riscv/user
   OBJECT_DIR = CMakeFiles/xv6_riscv.dir
   OBJECT_FILE_DIR = CMakeFiles/xv6_riscv.dir/user
-  TARGET_COMPILE_PDB = CMakeFiles/xv6_riscv.dir/
-  TARGET_PDB = xv6_riscv.pdb
 
 build CMakeFiles/xv6_riscv.dir/user/printf.c.o: C_COMPILER__xv6_riscv_Debug /Users/seyyed/xv6/xv6-riscv/user/printf.c || cmake_object_order_depends_target_xv6_riscv
   DEP_FILE = CMakeFiles/xv6_riscv.dir/user/printf.c.o.d
@@ -361,8 +293,6 @@ build CMakeFiles/xv6_riscv.dir/user/printf.c.o: C_COMPILER__xv6_riscv_Debug /Use
   INCLUDES = -I/Users/seyyed/xv6/xv6-riscv/kernel -I/Users/seyyed/xv6/xv6-riscv/user
   OBJECT_DIR = CMakeFiles/xv6_riscv.dir
   OBJECT_FILE_DIR = CMakeFiles/xv6_riscv.dir/user
-  TARGET_COMPILE_PDB = CMakeFiles/xv6_riscv.dir/
-  TARGET_PDB = xv6_riscv.pdb
 
 build CMakeFiles/xv6_riscv.dir/user/rm.c.o: C_COMPILER__xv6_riscv_Debug /Users/seyyed/xv6/xv6-riscv/user/rm.c || cmake_object_order_depends_target_xv6_riscv
   DEP_FILE = CMakeFiles/xv6_riscv.dir/user/rm.c.o.d
@@ -370,8 +300,6 @@ build CMakeFiles/xv6_riscv.dir/user/rm.c.o: C_COMPILER__xv6_riscv_Debug /Users/s
   INCLUDES = -I/Users/seyyed/xv6/xv6-riscv/kernel -I/Users/seyyed/xv6/xv6-riscv/user
   OBJECT_DIR = CMakeFiles/xv6_riscv.dir
   OBJECT_FILE_DIR = CMakeFiles/xv6_riscv.dir/user
-  TARGET_COMPILE_PDB = CMakeFiles/xv6_riscv.dir/
-  TARGET_PDB = xv6_riscv.pdb
 
 build CMakeFiles/xv6_riscv.dir/user/sh.c.o: C_COMPILER__xv6_riscv_Debug /Users/seyyed/xv6/xv6-riscv/user/sh.c || cmake_object_order_depends_target_xv6_riscv
   DEP_FILE = CMakeFiles/xv6_riscv.dir/user/sh.c.o.d
@@ -379,8 +307,6 @@ build CMakeFiles/xv6_riscv.dir/user/sh.c.o: C_COMPILER__xv6_riscv_Debug /Users/s
   INCLUDES = -I/Users/seyyed/xv6/xv6-riscv/kernel -I/Users/seyyed/xv6/xv6-riscv/user
   OBJECT_DIR = CMakeFiles/xv6_riscv.dir
   OBJECT_FILE_DIR = CMakeFiles/xv6_riscv.dir/user
-  TARGET_COMPILE_PDB = CMakeFiles/xv6_riscv.dir/
-  TARGET_PDB = xv6_riscv.pdb
 
 build CMakeFiles/xv6_riscv.dir/user/stressfs.c.o: C_COMPILER__xv6_riscv_Debug /Users/seyyed/xv6/xv6-riscv/user/stressfs.c || cmake_object_order_depends_target_xv6_riscv
   DEP_FILE = CMakeFiles/xv6_riscv.dir/user/stressfs.c.o.d
@@ -388,8 +314,6 @@ build CMakeFiles/xv6_riscv.dir/user/stressfs.c.o: C_COMPILER__xv6_riscv_Debug /U
   INCLUDES = -I/Users/seyyed/xv6/xv6-riscv/kernel -I/Users/seyyed/xv6/xv6-riscv/user
   OBJECT_DIR = CMakeFiles/xv6_riscv.dir
   OBJECT_FILE_DIR = CMakeFiles/xv6_riscv.dir/user
-  TARGET_COMPILE_PDB = CMakeFiles/xv6_riscv.dir/
-  TARGET_PDB = xv6_riscv.pdb
 
 build CMakeFiles/xv6_riscv.dir/user/ulib.c.o: C_COMPILER__xv6_riscv_Debug /Users/seyyed/xv6/xv6-riscv/user/ulib.c || cmake_object_order_depends_target_xv6_riscv
   DEP_FILE = CMakeFiles/xv6_riscv.dir/user/ulib.c.o.d
@@ -397,8 +321,6 @@ build CMakeFiles/xv6_riscv.dir/user/ulib.c.o: C_COMPILER__xv6_riscv_Debug /Users
   INCLUDES = -I/Users/seyyed/xv6/xv6-riscv/kernel -I/Users/seyyed/xv6/xv6-riscv/user
   OBJECT_DIR = CMakeFiles/xv6_riscv.dir
   OBJECT_FILE_DIR = CMakeFiles/xv6_riscv.dir/user
-  TARGET_COMPILE_PDB = CMakeFiles/xv6_riscv.dir/
-  TARGET_PDB = xv6_riscv.pdb
 
 build CMakeFiles/xv6_riscv.dir/user/umalloc.c.o: C_COMPILER__xv6_riscv_Debug /Users/seyyed/xv6/xv6-riscv/user/umalloc.c || cmake_object_order_depends_target_xv6_riscv
   DEP_FILE = CMakeFiles/xv6_riscv.dir/user/umalloc.c.o.d
@@ -406,8 +328,6 @@ build CMakeFiles/xv6_riscv.dir/user/umalloc.c.o: C_COMPILER__xv6_riscv_Debug /Us
   INCLUDES = -I/Users/seyyed/xv6/xv6-riscv/kernel -I/Users/seyyed/xv6/xv6-riscv/user
   OBJECT_DIR = CMakeFiles/xv6_riscv.dir
   OBJECT_FILE_DIR = CMakeFiles/xv6_riscv.dir/user
-  TARGET_COMPILE_PDB = CMakeFiles/xv6_riscv.dir/
-  TARGET_PDB = xv6_riscv.pdb
 
 build CMakeFiles/xv6_riscv.dir/user/usertests.c.o: C_COMPILER__xv6_riscv_Debug /Users/seyyed/xv6/xv6-riscv/user/usertests.c || cmake_object_order_depends_target_xv6_riscv
   DEP_FILE = CMakeFiles/xv6_riscv.dir/user/usertests.c.o.d
@@ -415,8 +335,6 @@ build CMakeFiles/xv6_riscv.dir/user/usertests.c.o: C_COMPILER__xv6_riscv_Debug /
   INCLUDES = -I/Users/seyyed/xv6/xv6-riscv/kernel -I/Users/seyyed/xv6/xv6-riscv/user
   OBJECT_DIR = CMakeFiles/xv6_riscv.dir
   OBJECT_FILE_DIR = CMakeFiles/xv6_riscv.dir/user
-  TARGET_COMPILE_PDB = CMakeFiles/xv6_riscv.dir/
-  TARGET_PDB = xv6_riscv.pdb
 
 build CMakeFiles/xv6_riscv.dir/user/wc.c.o: C_COMPILER__xv6_riscv_Debug /Users/seyyed/xv6/xv6-riscv/user/wc.c || cmake_object_order_depends_target_xv6_riscv
   DEP_FILE = CMakeFiles/xv6_riscv.dir/user/wc.c.o.d
@@ -424,8 +342,6 @@ build CMakeFiles/xv6_riscv.dir/user/wc.c.o: C_COMPILER__xv6_riscv_Debug /Users/s
   INCLUDES = -I/Users/seyyed/xv6/xv6-riscv/kernel -I/Users/seyyed/xv6/xv6-riscv/user
   OBJECT_DIR = CMakeFiles/xv6_riscv.dir
   OBJECT_FILE_DIR = CMakeFiles/xv6_riscv.dir/user
-  TARGET_COMPILE_PDB = CMakeFiles/xv6_riscv.dir/
-  TARGET_PDB = xv6_riscv.pdb
 
 build CMakeFiles/xv6_riscv.dir/user/zombie.c.o: C_COMPILER__xv6_riscv_Debug /Users/seyyed/xv6/xv6-riscv/user/zombie.c || cmake_object_order_depends_target_xv6_riscv
   DEP_FILE = CMakeFiles/xv6_riscv.dir/user/zombie.c.o.d
@@ -433,8 +349,13 @@ build CMakeFiles/xv6_riscv.dir/user/zombie.c.o: C_COMPILER__xv6_riscv_Debug /Use
   INCLUDES = -I/Users/seyyed/xv6/xv6-riscv/kernel -I/Users/seyyed/xv6/xv6-riscv/user
   OBJECT_DIR = CMakeFiles/xv6_riscv.dir
   OBJECT_FILE_DIR = CMakeFiles/xv6_riscv.dir/user
-  TARGET_COMPILE_PDB = CMakeFiles/xv6_riscv.dir/
-  TARGET_PDB = xv6_riscv.pdb
+
+build CMakeFiles/xv6_riscv.dir/user/cps.c.o: C_COMPILER__xv6_riscv_Debug /Users/seyyed/xv6/xv6-riscv/user/cps.c || cmake_object_order_depends_target_xv6_riscv
+  DEP_FILE = CMakeFiles/xv6_riscv.dir/user/cps.c.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -fcolor-diagnostics
+  INCLUDES = -I/Users/seyyed/xv6/xv6-riscv/kernel -I/Users/seyyed/xv6/xv6-riscv/user
+  OBJECT_DIR = CMakeFiles/xv6_riscv.dir
+  OBJECT_FILE_DIR = CMakeFiles/xv6_riscv.dir/user
 
 
 # =============================================================================
@@ -444,14 +365,13 @@ build CMakeFiles/xv6_riscv.dir/user/zombie.c.o: C_COMPILER__xv6_riscv_Debug /Use
 #############################################
 # Link the executable xv6_riscv
 
-build xv6_riscv: C_EXECUTABLE_LINKER__xv6_riscv_Debug CMakeFiles/xv6_riscv.dir/kernel/bio.c.o CMakeFiles/xv6_riscv.dir/kernel/console.c.o CMakeFiles/xv6_riscv.dir/kernel/exec.c.o CMakeFiles/xv6_riscv.dir/kernel/file.c.o CMakeFiles/xv6_riscv.dir/kernel/fs.c.o CMakeFiles/xv6_riscv.dir/kernel/kalloc.c.o CMakeFiles/xv6_riscv.dir/kernel/log.c.o CMakeFiles/xv6_riscv.dir/kernel/main.c.o CMakeFiles/xv6_riscv.dir/kernel/pipe.c.o CMakeFiles/xv6_riscv.dir/kernel/plic.c.o CMakeFiles/xv6_riscv.dir/kernel/printf.c.o CMakeFiles/xv6_riscv.dir/kernel/proc.c.o CMakeFiles/xv6_riscv.dir/kernel/sleeplock.c.o CMakeFiles/xv6_riscv.dir/kernel/spinlock.c.o CMakeFiles/xv6_riscv.dir/kernel/start.c.o CMakeFiles/xv6_riscv.dir/kernel/string.c.o CMakeFiles/xv6_riscv.dir/kernel/syscall.c.o CMakeFiles/xv6_riscv.dir/kernel/sysfile.c.o CMakeFiles/xv6_riscv.dir/kernel/sysproc.c.o CMakeFiles/xv6_riscv.dir/kernel/trap.c.o CMakeFiles/xv6_riscv.dir/kernel/uart.c.o CMakeFiles/xv6_riscv.dir/kernel/virtio_disk.c.o CMakeFiles/xv6_riscv.dir/kernel/vm.c.o CMakeFiles/xv6_riscv.dir/mkfs/mkfs.c.o CMakeFiles/xv6_riscv.dir/user/cat.c.o CMakeFiles/xv6_riscv.dir/user/echo.c.o CMakeFiles/xv6_riscv.dir/user/forktest.c.o CMakeFiles/xv6_riscv.dir/user/grep.c.o CMakeFiles/xv6_riscv.dir/user/grind.c.o CMakeFiles/xv6_riscv.dir/user/init.c.o CMakeFiles/xv6_riscv.dir/user/kill.c.o CMakeFiles/xv6_riscv.dir/user/ln.c.o CMakeFiles/xv6_riscv.dir/user/ls.c.o CMakeFiles/xv6_riscv.dir/user/mkdir.c.o CMakeFiles/xv6_riscv.dir/user/printf.c.o CMakeFiles/xv6_riscv.dir/user/rm.c.o CMakeFiles/xv6_riscv.dir/user/sh.c.o CMakeFiles/xv6_riscv.dir/user/stressfs.c.o CMakeFiles/xv6_riscv.dir/user/ulib.c.o CMakeFiles/xv6_riscv.dir/user/umalloc.c.o CMakeFiles/xv6_riscv.dir/user/usertests.c.o CMakeFiles/xv6_riscv.dir/user/wc.c.o CMakeFiles/xv6_riscv.dir/user/zombie.c.o
+build xv6_riscv: C_EXECUTABLE_LINKER__xv6_riscv_Debug CMakeFiles/xv6_riscv.dir/kernel/bio.c.o CMakeFiles/xv6_riscv.dir/kernel/console.c.o CMakeFiles/xv6_riscv.dir/kernel/exec.c.o CMakeFiles/xv6_riscv.dir/kernel/file.c.o CMakeFiles/xv6_riscv.dir/kernel/fs.c.o CMakeFiles/xv6_riscv.dir/kernel/kalloc.c.o CMakeFiles/xv6_riscv.dir/kernel/log.c.o CMakeFiles/xv6_riscv.dir/kernel/main.c.o CMakeFiles/xv6_riscv.dir/kernel/pipe.c.o CMakeFiles/xv6_riscv.dir/kernel/plic.c.o CMakeFiles/xv6_riscv.dir/kernel/printf.c.o CMakeFiles/xv6_riscv.dir/kernel/proc.c.o CMakeFiles/xv6_riscv.dir/kernel/sleeplock.c.o CMakeFiles/xv6_riscv.dir/kernel/spinlock.c.o CMakeFiles/xv6_riscv.dir/kernel/start.c.o CMakeFiles/xv6_riscv.dir/kernel/string.c.o CMakeFiles/xv6_riscv.dir/kernel/syscall.c.o CMakeFiles/xv6_riscv.dir/kernel/sysfile.c.o CMakeFiles/xv6_riscv.dir/kernel/sysproc.c.o CMakeFiles/xv6_riscv.dir/kernel/trap.c.o CMakeFiles/xv6_riscv.dir/kernel/uart.c.o CMakeFiles/xv6_riscv.dir/kernel/virtio_disk.c.o CMakeFiles/xv6_riscv.dir/kernel/vm.c.o CMakeFiles/xv6_riscv.dir/mkfs/mkfs.c.o CMakeFiles/xv6_riscv.dir/user/cat.c.o CMakeFiles/xv6_riscv.dir/user/echo.c.o CMakeFiles/xv6_riscv.dir/user/forktest.c.o CMakeFiles/xv6_riscv.dir/user/grep.c.o CMakeFiles/xv6_riscv.dir/user/grind.c.o CMakeFiles/xv6_riscv.dir/user/init.c.o CMakeFiles/xv6_riscv.dir/user/kill.c.o CMakeFiles/xv6_riscv.dir/user/ln.c.o CMakeFiles/xv6_riscv.dir/user/ls.c.o CMakeFiles/xv6_riscv.dir/user/mkdir.c.o CMakeFiles/xv6_riscv.dir/user/printf.c.o CMakeFiles/xv6_riscv.dir/user/rm.c.o CMakeFiles/xv6_riscv.dir/user/sh.c.o CMakeFiles/xv6_riscv.dir/user/stressfs.c.o CMakeFiles/xv6_riscv.dir/user/ulib.c.o CMakeFiles/xv6_riscv.dir/user/umalloc.c.o CMakeFiles/xv6_riscv.dir/user/usertests.c.o CMakeFiles/xv6_riscv.dir/user/wc.c.o CMakeFiles/xv6_riscv.dir/user/zombie.c.o CMakeFiles/xv6_riscv.dir/user/cps.c.o
   FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk
   OBJECT_DIR = CMakeFiles/xv6_riscv.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_COMPILE_PDB = CMakeFiles/xv6_riscv.dir/
   TARGET_FILE = xv6_riscv
-  TARGET_PDB = xv6_riscv.pdb
+  TARGET_PDB = xv6_riscv.dbg
 
 
 #############################################
@@ -496,14 +416,14 @@ build all: phony xv6_riscv
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/CMakeCInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/CMakeCXXCompiler.cmake.in /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/CMakeCXXCompilerABI.cpp /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/CMakeCXXInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/CMakeCommonLanguageInclude.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/CMakeCompilerIdDetection.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/CMakeDetermineCXXCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/CMakeDetermineCompileFeatures.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/CMakeDetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/CMakeDetermineCompilerABI.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/CMakeDetermineCompilerId.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/CMakeFindBinUtils.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/CMakeGenericSystem.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/CMakeInitializeConfigs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/CMakeLanguageInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/CMakeParseImplicitIncludeInfo.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/CMakeParseImplicitLinkInfo.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/CMakeParseLibraryArchitecture.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/CMakeSystemSpecificInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/CMakeSystemSpecificInitialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/CMakeTestCXXCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/CMakeTestCompilerCommon.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Compiler/ADSP-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Compiler/ARMCC-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Compiler/ARMClang-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Compiler/AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Compiler/AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Compiler/AppleClang-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Compiler/Borland-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Compiler/Clang-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Compiler/Clang-DetermineCompilerInternal.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Compiler/Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Compiler/Comeau-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Compiler/Cray-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Compiler/Embarcadero-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Compiler/Fujitsu-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Compiler/GHS-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Compiler/GNU.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Compiler/HP-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Compiler/IAR-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Compiler/IBMClang-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Compiler/Intel-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Compiler/LCC-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Compiler/MSVC-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Compiler/NVHPC-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Compiler/NVIDIA-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Compiler/PGI-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Compiler/PathScale-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Compiler/SCO-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Compiler/TI-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Compiler/Tasking-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Compiler/Watcom-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Compiler/XL-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Internal/FeatureTesting.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Platform/Apple-AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Platform/Apple-AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Platform/Apple-Clang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Platform/Apple-Clang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Platform/Apple-Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Platform/Darwin-Determine-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Platform/Darwin-Initialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Platform/Darwin.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Platform/UnixPaths.cmake /Users/seyyed/xv6/xv6-riscv/CMakeLists.txt CMakeCache.txt CMakeFiles/3.25.2/CMakeCCompiler.cmake CMakeFiles/3.25.2/CMakeCXXCompiler.cmake CMakeFiles/3.25.2/CMakeSystem.cmake
+build build.ninja: RERUN_CMAKE | /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/CMakeCInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/CMakeCXXInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/CMakeCommonLanguageInclude.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/CMakeGenericSystem.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/CMakeInitializeConfigs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/CMakeLanguageInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/CMakeSystemSpecificInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/CMakeSystemSpecificInitialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Compiler/AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Compiler/AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Compiler/Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Compiler/GNU.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Platform/Apple-AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Platform/Apple-AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Platform/Apple-Clang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Platform/Apple-Clang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Platform/Apple-Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Platform/Darwin-Initialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Platform/Darwin.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Platform/UnixPaths.cmake /Users/seyyed/xv6/xv6-riscv/CMakeLists.txt CMakeCache.txt CMakeFiles/3.25.2/CMakeCCompiler.cmake CMakeFiles/3.25.2/CMakeCXXCompiler.cmake CMakeFiles/3.25.2/CMakeSystem.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/CMakeCInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/CMakeCXXCompiler.cmake.in /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/CMakeCXXCompilerABI.cpp /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/CMakeCXXInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/CMakeCommonLanguageInclude.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/CMakeCompilerIdDetection.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/CMakeDetermineCXXCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/CMakeDetermineCompileFeatures.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/CMakeDetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/CMakeDetermineCompilerABI.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/CMakeDetermineCompilerId.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/CMakeFindBinUtils.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/CMakeGenericSystem.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/CMakeInitializeConfigs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/CMakeLanguageInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/CMakeParseImplicitIncludeInfo.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/CMakeParseImplicitLinkInfo.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/CMakeParseLibraryArchitecture.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/CMakeSystemSpecificInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/CMakeSystemSpecificInitialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/CMakeTestCXXCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/CMakeTestCompilerCommon.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Compiler/ADSP-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Compiler/ARMCC-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Compiler/ARMClang-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Compiler/AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Compiler/AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Compiler/AppleClang-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Compiler/Borland-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Compiler/Clang-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Compiler/Clang-DetermineCompilerInternal.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Compiler/Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Compiler/Comeau-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Compiler/Cray-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Compiler/Embarcadero-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Compiler/Fujitsu-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Compiler/GHS-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Compiler/GNU.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Compiler/HP-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Compiler/IAR-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Compiler/IBMClang-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Compiler/Intel-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Compiler/LCC-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Compiler/MSVC-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Compiler/NVHPC-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Compiler/NVIDIA-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Compiler/PGI-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Compiler/PathScale-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Compiler/SCO-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Compiler/TI-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Compiler/Tasking-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Compiler/Watcom-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Compiler/XL-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Internal/FeatureTesting.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Platform/Apple-AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Platform/Apple-AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Platform/Apple-Clang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Platform/Apple-Clang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Platform/Apple-Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Platform/Darwin-Determine-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Platform/Darwin-Initialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Platform/Darwin.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Platform/UnixPaths.cmake /Users/seyyed/xv6/xv6-riscv/CMakeLists.txt CMakeCache.txt CMakeFiles/3.25.2/CMakeCCompiler.cmake CMakeFiles/3.25.2/CMakeCXXCompiler.cmake CMakeFiles/3.25.2/CMakeSystem.cmake: phony
+build /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/CMakeCInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/CMakeCXXInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/CMakeCommonLanguageInclude.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/CMakeGenericSystem.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/CMakeInitializeConfigs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/CMakeLanguageInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/CMakeSystemSpecificInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/CMakeSystemSpecificInitialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Compiler/AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Compiler/AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Compiler/Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Compiler/GNU.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Platform/Apple-AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Platform/Apple-AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Platform/Apple-Clang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Platform/Apple-Clang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Platform/Apple-Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Platform/Darwin-Initialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Platform/Darwin.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Platform/UnixPaths.cmake /Users/seyyed/xv6/xv6-riscv/CMakeLists.txt CMakeCache.txt CMakeFiles/3.25.2/CMakeCCompiler.cmake CMakeFiles/3.25.2/CMakeCXXCompiler.cmake CMakeFiles/3.25.2/CMakeSystem.cmake: phony
 
 
 #############################################

@@ -107,7 +107,8 @@
 				65,
 				68,
 				70,
-				71
+				71,
+				76
 			]
 		}
 	],
@@ -203,7 +204,8 @@
 				65,
 				68,
 				70,
-				71
+				71,
+				76
 			]
 		},
 		{
@@ -226,7 +228,8 @@
 				38,
 				43,
 				45,
-				66
+				66,
+				75
 			]
 		}
 	],
@@ -649,6 +652,17 @@
 			"backtrace" : 1,
 			"path" : "README",
 			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "kernel/child_processes.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "user/cps.c",
+			"sourceGroupIndex" : 1
 		}
 	],
 	"type" : "EXECUTABLE"
