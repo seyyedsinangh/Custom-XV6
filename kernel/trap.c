@@ -5,6 +5,7 @@
 #include "spinlock.h"
 #include "proc.h"
 #include "defs.h"
+#include "report_traps.h"
 
 struct spinlock tickslock;
 uint ticks;
@@ -27,6 +28,28 @@ void
 trapinithart(void)
 {
   w_stvec((uint64)kernelvec);
+}
+
+void add_report_trap() {
+    struct report rep;
+    rep.parents_count = 0;
+    rep.scause = r_scause();
+    rep.sepc = r_sepc();
+    rep.stval = r_stval();
+    struct proc *p = myproc();
+    rep.pid = p->pid;
+    strncpy(rep.pname, p->name, 16);
+    struct proc *parent = p->parent;
+    for (int i=0; i < MAX_PARENT_BUFFER_SIZE; i++) {
+        rep.parents[i] = parent->pid;
+        rep.parents_count++;
+        if (parent->pid == 1) break;
+        parent = parent->parent;
+    }
+    _internal_report_list.reports[_internal_report_list.writeIndex] = rep;
+    if (_internal_report_list.writeIndex == (MAX_REPORT_BUFFER_SIZE - 1)) _internal_report_list.writeIndex = 0;
+    else _internal_report_list.writeIndex++;
+    if (_internal_report_list.numberOfReports != MAX_REPORT_BUFFER_SIZE) _internal_report_list.numberOfReports++;
 }
 
 //
@@ -63,11 +86,11 @@ usertrap(void)
     // an interrupt will change sepc, scause, and sstatus,
     // so enable only now that we're done with those registers.
     intr_on();
-
     syscall();
   } else if((which_dev = devintr()) != 0){
     // ok
   } else {
+    add_report_trap();
     printf("usertrap(): unexpected scause 0x%lx pid=%d\n", r_scause(), p->pid);
     printf("            sepc=0x%lx stval=0x%lx\n", r_sepc(), r_stval());
     setkilled(p);

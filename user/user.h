@@ -2,6 +2,7 @@
 #include "kernel/param.h"
 struct stat;
 struct child_processes;
+struct report_traps;
 
 // system calls
 int fork(void);
@@ -26,6 +27,7 @@ char* sbrk(int);
 int sleep(int);
 int uptime(void);
 int child_processes(struct child_processes*);
+int report_traps(struct report_traps*);
 
 // ulib.c
 int stat(const char*, struct stat*);

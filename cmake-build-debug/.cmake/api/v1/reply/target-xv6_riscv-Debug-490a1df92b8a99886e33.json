@@ -108,7 +108,8 @@
 				68,
 				70,
 				71,
-				76
+				76,
+				78
 			]
 		}
 	],
@@ -205,7 +206,8 @@
 				68,
 				70,
 				71,
-				76
+				76,
+				78
 			]
 		},
 		{
@@ -229,7 +231,8 @@
 				43,
 				45,
 				66,
-				75
+				75,
+				77
 			]
 		}
 	],
@@ -662,6 +665,17 @@
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "user/cps.c",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "kernel/report_traps.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "user/reptraps.c",
 			"sourceGroupIndex" : 1
 		}
 	],

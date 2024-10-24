@@ -6,6 +6,7 @@
 #include "spinlock.h"
 #include "proc.h"
 #include "child_processes.h"
+#include "report_traps.h"
 
 uint64
 sys_exit(void)
@@ -105,5 +106,20 @@ sys_child_processes(void)
     int err = child_processes(&kcps);
     release(&tickslock);
     copyout(p->pagetable, (uint64)cps, (char *)&kcps, sizeof(kcps));
+    return err;
+}
+
+uint64
+sys_report_traps(void)
+{
+    struct report_traps *reptraps;
+    struct report_traps kreptraps;
+    argaddr(0, (uint64 *)&reptraps);
+    struct proc *p = myproc();
+    copyin(p->pagetable, (char *)reptraps, (uint64)&kreptraps, sizeof(kreptraps));
+    acquire(&tickslock);
+    int err = report_traps(&kreptraps);
+    release(&tickslock);
+    copyout(p->pagetable, (uint64)reptraps, (char *)&kreptraps, sizeof(kreptraps));
     return err;
 }

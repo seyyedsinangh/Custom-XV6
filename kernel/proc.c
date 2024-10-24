@@ -7,7 +7,9 @@
 #include "defs.h"
 #include <stddef.h>
 #include "child_processes.h"
+#include "report_traps.h"
 
+struct report_list _internal_report_list = {.numberOfReports=0,.writeIndex=0};
 
 struct cpu cpus[NCPU];
 
@@ -734,6 +736,26 @@ int child_processes(struct child_processes *cps) {
             release(&father->lock);
             cps->count++;
         }
+    }
+    return 0;
+}
+
+int report_traps(struct report_traps *reptraps) {
+    reptraps->count = 0;
+    struct proc *p = myproc();
+    acquire(&p->lock);
+    int father_pid = p->pid;
+    release(&p->lock);
+    for (int i=0; i <_internal_report_list.numberOfReports; i++) {
+        struct report rp = _internal_report_list.reports[i];
+        for (int j=0; j<rp.parents_count; j++) {
+            if (rp.parents[j]==father_pid) {
+                reptraps->reports[reptraps->count] = rp;
+                reptraps->count++;
+                break;
+            }
+        }
+        if (reptraps->count==MAX_REPORT_BUFFER_SIZE) break;
     }
     return 0;
 }
