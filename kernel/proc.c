@@ -720,7 +720,7 @@ int child_processes(struct child_processes *cps) {
     int father_pid = p->pid;
     release(&p->lock);
     for(p = proc; p < &proc[NPROC]; p++){
-        if(p->state == UNUSED) break;
+        if(p->state == UNUSED) continue;
         if(is_father(father_pid, p)) {
             acquire(&p->lock);
             int index = cps->count;
