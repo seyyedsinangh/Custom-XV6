@@ -53,6 +53,7 @@ void
 procinit(void)
 {
     struct proc *p;
+    struct thread *t;
 
     initlock(&pid_lock, "nextpid");
     initlock(&wait_lock, "wait_lock");
@@ -60,6 +61,9 @@ procinit(void)
         initlock(&p->lock, "proc");
         p->state = UNUSED;
         p->kstack = KSTACK((int) (p - proc));
+        for (t = thread; t < &p->threads[MAX_THREAD]; t++) {
+            t->state = THREAD_FREE;
+        }
     }
 }
 
@@ -150,7 +154,7 @@ allocproc(void)
     memset(&p->context, 0, sizeof(p->context));
     p->context.ra = (uint64)forkret;
     p->context.sp = p->kstack + PGSIZE;
-
+    p->current_thread = NULL;
     return p;
 }
 
@@ -174,6 +178,12 @@ freeproc(struct proc *p)
     p->killed = 0;
     p->xstate = 0;
     p->state = UNUSED;
+    p->current_thread = NULL;
+    struct thread *t;
+    for (t = thread; t < &p->threads[MAX_THREAD]; t++) {
+        t->state = THREAD_FREE;
+    }
+    for
 }
 
 // Create a user page table for a given process, with no user memory,
