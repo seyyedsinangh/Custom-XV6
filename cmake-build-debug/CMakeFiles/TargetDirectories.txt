@@ -1,3 +1,0 @@
-/Users/seyyed/xv6/xv6-riscv/cmake-build-debug/CMakeFiles/xv6_riscv.dir
-/Users/seyyed/xv6/xv6-riscv/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/seyyed/xv6/xv6-riscv/cmake-build-debug/CMakeFiles/rebuild_cache.dir
