@@ -61,7 +61,7 @@ procinit(void)
         initlock(&p->lock, "proc");
         p->state = UNUSED;
         p->kstack = KSTACK((int) (p - proc));
-        for (t = thread; t < &p->threads[MAX_THREAD]; t++) {
+        for (t = p->threads; t < &p->threads[MAX_THREAD]; t++) {
             t->state = THREAD_FREE;
         }
     }
@@ -119,7 +119,6 @@ static struct proc*
 allocproc(void)
 {
     struct proc *p;
-
     for(p = proc; p < &proc[NPROC]; p++) {
         acquire(&p->lock);
         if(p->state == UNUSED) {
@@ -180,10 +179,9 @@ freeproc(struct proc *p)
     p->state = UNUSED;
     p->current_thread = NULL;
     struct thread *t;
-    for (t = thread; t < &p->threads[MAX_THREAD]; t++) {
-        t->state = THREAD_FREE;
+    for (t = p->threads; t < &p->threads[MAX_THREAD]; t++) {
+        // freethread(t);
     }
-    for
 }
 
 // Create a user page table for a given process, with no user memory,
@@ -312,7 +310,7 @@ fork(void)
     np->sz = p->sz;
 
     // copy saved user registers.
-    *(np->trapframe) = *(p->trapframe);
+            *(np->trapframe) = *(p->trapframe);
 
     // Cause fork to return 0 in the child.
     np->trapframe->a0 = 0;
@@ -461,6 +459,7 @@ scheduler(void)
 {
     struct proc *p;
     struct cpu *c = mycpu();
+    struct thread *t;
 
     c->proc = 0;
     for(;;){
@@ -472,18 +471,33 @@ scheduler(void)
         int found = 0;
         for(p = proc; p < &proc[NPROC]; p++) {
             acquire(&p->lock);
-            if(p->state == RUNNABLE) {
+            if(p->current_thread == NULL && p->state == RUNNABLE) {
                 // Switch to chosen process.  It is the process's job
                 // to release its lock and then reacquire it
                 // before jumping back to us.
                 p->state = RUNNING;
                 c->proc = p;
+                p->current_thread = NULL;
                 swtch(&c->context, &p->context);
 
                 // Process is done running for now.
                 // It should have changed its p->state before coming back.
                 c->proc = 0;
                 found = 1;
+            }
+            if(!found) {
+                for (t = p->threads; t < &p->threads[MAX_THREAD]; t++) {
+                    if (t->state == THREAD_RUNNABLE) {
+                        t->state = THREAD_RUNNING;
+                        c->proc = p;
+                        p->current_thread = t;
+
+                        swtch(&c->context, (struct context *)t->trapframe);
+
+                        c->proc = 0;
+                        found = 1;
+                    }
+                }
             }
             release(&p->lock);
         }
