@@ -16,3 +16,4 @@ kernel/kernel
 user/usys.S
 .gdbinit
 .idea
+cmake-build-debug
