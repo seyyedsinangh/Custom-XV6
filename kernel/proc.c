@@ -157,6 +157,15 @@ allocproc(void)
     return p;
 }
 
+void freethread(struct thread *t) {
+    if(t->trapframe)
+        kfree((void*)t->trapframe);
+    t->trapframe = 0;
+    t->state = THREAD_FREE;
+    t->id = 0;
+    t->join = 0;
+}
+
 // free a proc structure and the data hanging from it,
 // including user pages.
 // p->lock must be held.
@@ -180,7 +189,7 @@ freeproc(struct proc *p)
     p->current_thread = NULL;
     struct thread *t;
     for (t = p->threads; t < &p->threads[MAX_THREAD]; t++) {
-        // freethread(t);
+        freethread(t);
     }
 }
 
@@ -783,6 +792,53 @@ int report_traps(struct report_traps *reptraps) {
     }
     return 0;
 }
+
+int create_thread(void (*start_routine) (void*), void *arg, void *pstack) {
+    struct proc *p = myproc();
+    struct thread *t;
+    int flag = 0;
+    acquire(&p->lock);
+    if(p->current_thread == NULL) {
+        t = p->threads;
+        t->trapframe = (struct trapframe *)kalloc();
+        if (t->trapframe == 0) {
+            return -1;
+        }
+        memset(t->trapframe, 0, sizeof(struct trapframe));
+        *(t->trapframe) = *(p->trapframe);
+        t->id = 1;
+        t->join = 0;
+        t->state = THREAD_RUNNABLE;
+        p->current_thread = t;
+        flag = 1;
+    }
+    for (t = p->threads; t < &p->threads[MAX_THREAD]; t++) {
+        if (t->state == THREAD_FREE) {
+            break;
+        }
+    }
+    if (t == &p->threads[MAX_THREAD]) {
+        return -1;
+    }
+    t->trapframe = (struct trapframe *)kalloc();
+    if (t->trapframe == 0) {
+        if(flag == 1) {
+            freethread(p->current_thread);
+        }
+        return -1;
+    }
+    memset(t->trapframe, 0, sizeof(struct trapframe));
+    *(t->trapframe) = *(p->current_thread->trapframe);
+    t->trapframe->epc = (uint64)start_routine;
+    t->trapframe->sp = (uint64) pstack;
+    t->trapframe->a0 = (uint64)arg;
+    t->trapframe->ra = (uint64)(-1);
+    t->id = t - p->threads + 1;
+    t->state = THREAD_RUNNABLE;
+    release(&p->lock);
+    return t->id;
+}
+
 
 int
 join_thread(int tid)
