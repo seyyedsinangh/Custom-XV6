@@ -123,3 +123,17 @@ sys_report_traps(void)
     copyout(p->pagetable, (uint64)reptraps, (char *)&kreptraps, sizeof(kreptraps));
     return err;
 }
+
+uint64
+sys_create_thread(void)
+{
+    uint64 start_routine_addr;
+    uint64 arg_addr;
+    uint64 pstack;
+    argaddr(0, &start_routine_addr);
+    argaddr(1, &arg_addr);
+    argaddr(2, &pstack);
+    int tid = create_thread((void (*)(void *))start_routine_addr, (void *)arg_addr, (void *)pstack);
+    return tid;
+}
+
