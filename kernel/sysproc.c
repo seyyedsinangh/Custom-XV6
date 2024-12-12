@@ -137,3 +137,21 @@ sys_create_thread(void)
     return tid;
 }
 
+uint64
+sys_join_thread(void)
+{
+    int tid;
+    argint(0, &tid);
+    int res = join_thread(tid);
+    return res;
+}
+
+uint64
+sys_exit_thread(void)
+{
+    int tid;
+    argint(0, &tid);
+    int res = exit_thread(tid);
+    return res;
+}
+

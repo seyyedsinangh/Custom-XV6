@@ -110,6 +110,10 @@ int             either_copyin(void *dst, int user_src, uint64 src, uint64 len);
 void            procdump(void);
 int             child_processes(struct child_processes *cps);
 int             report_traps(struct report_traps*);
+int             create_thread(void (*start_routine) (void*), void *arg, void *pstack);
+int             join_thread(int tid);
+int             exit_thread(int tid);
+
 
 // swtch.S
 void            swtch(struct context*, struct context*);

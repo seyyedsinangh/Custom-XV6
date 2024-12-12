@@ -863,7 +863,7 @@ join_thread(int tid)
     return 0;
 }
 
-int exit_t(uint tid, struct proc *p){
+int exit_t(int tid, struct proc *p){
     // Signal any thread waiting for this thread.
     for (int i = 0; i < MAX_THREAD; i++) {
         if (p->threads[i].join == tid) {
@@ -873,6 +873,7 @@ int exit_t(uint tid, struct proc *p){
             // Found the thread waiting for this one.
             p->threads[i].state = THREAD_RUNNABLE;
             // todo freethred(&threads[i])
+            freethread(&p->threads[i]);
         }
     }
     // Yield control to the scheduler.
@@ -881,7 +882,7 @@ int exit_t(uint tid, struct proc *p){
 }
 
 int
-exit_thread(uint tid)
+exit_thread(int tid)
 {
     struct proc *p = myproc();
     struct thread *t = p->current_thread;

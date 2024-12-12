@@ -23,3 +23,5 @@
 #define SYS_child_processes 22
 #define SYS_report_traps 23
 #define SYS_create_thread 24
+#define SYS_join_thread 25
+#define SYS_exit_thread 26

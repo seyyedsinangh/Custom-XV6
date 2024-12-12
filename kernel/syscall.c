@@ -104,6 +104,8 @@ extern uint64 sys_close(void);
 extern uint64 sys_child_processes(void);
 extern uint64 sys_report_traps(void);
 extern uint64 sys_create_thread(void);
+extern uint64 sys_join_thread(void);
+extern uint64 sys_exit_thread(void);
 
 // An array mapping syscall numbers from syscall.h
 // to the function that handles the system call.
@@ -132,6 +134,8 @@ static uint64 (*syscalls[])(void) = {
         [SYS_child_processes] sys_child_processes,
         [SYS_report_traps] sys_report_traps,
         [SYS_create_thread] sys_create_thread,
+        [SYS_join_thread] sys_join_thread,
+        [SYS_exit_thread] sys_exit_thread,
 };
 
 void

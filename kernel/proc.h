@@ -86,8 +86,8 @@ enum threadstate { THREAD_FREE, THREAD_RUNNABLE, THREAD_RUNNING, THREAD_JOINED }
 struct thread {
     enum threadstate state;
     struct trapframe *trapframe;
-    uint id;
-    uint join;
+    int id;
+    int join;
 };
 
 // Per-process state
