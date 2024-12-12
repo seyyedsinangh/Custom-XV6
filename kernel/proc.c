@@ -838,3 +838,58 @@ int create_thread(void (*start_routine) (void*), void *arg, void *pstack) {
     release(&p->lock);
     return t->id;
 }
+
+
+int
+join_thread(int tid)
+{
+    struct proc *p = myproc();
+    struct thread *caller = p->current_thread;
+    struct thread *target = 0;
+
+    for (int i = 0; i < MAX_THREAD; i++) {
+        if (p->threads[i].id == tid && p->threads[i].state != THREAD_FREE) {
+            target = &p->threads[i];
+            break;
+        }
+    }
+
+    if (!target || target->state == THREAD_FREE) {
+        return -1;
+    }
+    caller->join = tid;
+    caller->state = THREAD_JOINED;
+    sched();
+    return 0;
+}
+
+int exit_t(uint tid, struct proc *p){
+    // Signal any thread waiting for this thread.
+    for (int i = 0; i < MAX_THREAD; i++) {
+        if (p->threads[i].join == tid) {
+            if (p->threads[i].state == THREAD_FREE) {
+                return -1;
+            }
+            // Found the thread waiting for this one.
+            p->threads[i].state = THREAD_RUNNABLE;
+            // todo freethred(&threads[i])
+        }
+    }
+    // Yield control to the scheduler.
+    sched();
+    return 0;
+}
+
+int
+exit_thread(uint tid)
+{
+    struct proc *p = myproc();
+    struct thread *t = p->current_thread;
+    if (tid == -1) {
+        return exit_t(t->id,p);
+    } else {
+        return exit_t(tid, p);
+    }
+}
+
+
