@@ -797,7 +797,6 @@ int create_thread(void (*start_routine) (void*), void *arg, void *pstack) {
     struct proc *p = myproc();
     struct thread *t;
     int flag = 0;
-    acquire(&p->lock);
     if(p->current_thread == NULL) {
         t = p->threads;
         t->trapframe = (struct trapframe *)kalloc();
@@ -835,7 +834,6 @@ int create_thread(void (*start_routine) (void*), void *arg, void *pstack) {
     t->trapframe->ra = (uint64)(-1);
     t->id = t - p->threads + 1;
     t->state = THREAD_RUNNABLE;
-    release(&p->lock);
     return t->id;
 }
 

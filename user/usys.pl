@@ -38,3 +38,6 @@ entry("sleep");
 entry("uptime");
 entry("child_processes");
 entry("report_traps");
+entry("create_thread");
+entry("join_thread");
+entry("exit_thread");

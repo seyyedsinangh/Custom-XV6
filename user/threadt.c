@@ -21,18 +21,23 @@ void *my_thread(void *arg) {
             printf("thread c: %d\n", *number);
         }
     }
+    while (1);
+    return (void *) number;
 }
 
 int main(int argc, char *argv[]) {
     void * astack = malloc(THREAD_STACK_SIZE);
     void * bstack = malloc(THREAD_STACK_SIZE);
     void * cstack = malloc(THREAD_STACK_SIZE);
-    int ta = create_thread(my_thread, (void *) &a,astack);
-    int tb = create_thread(my_thread, (void *) &b,bstack);
-    int tc = create_thread(my_thread, (void *) &c,cstack);
+    int ta, tb, tc;
+    create_thread(my_thread, (void *) &a, astack);
+    create_thread(my_thread, (void *) &b, bstack);
+    create_thread(my_thread, (void *) &c, cstack);
     join_thread(ta);
     join_thread(tb);
     join_thread(tc);
+    printf("dddd, %p\n", astack);
+    while (1);
     exit(0);
 }
 
