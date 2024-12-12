@@ -830,7 +830,7 @@ int create_thread(void (*start_routine) (void*), void *arg, void *pstack) {
     memset(t->trapframe, 0, sizeof(struct trapframe));
     *(t->trapframe) = *(p->current_thread->trapframe);
     t->trapframe->epc = (uint64)start_routine;
-    t->trapframe->sp = (uint64) pstack;
+    t->trapframe->sp = (uint64) pstack + THREAD_STACK_SIZE;
     t->trapframe->a0 = (uint64)arg;
     t->trapframe->ra = (uint64)(-1);
     t->id = t - p->threads + 1;
@@ -864,19 +864,22 @@ join_thread(int tid)
 }
 
 int exit_t(int tid, struct proc *p){
-    // Signal any thread waiting for this thread.
+    // signal any thread waiting for this thread
+    struct thread *target = 0;
     for (int i = 0; i < MAX_THREAD; i++) {
         if (p->threads[i].join == tid) {
-            if (p->threads[i].state == THREAD_FREE) {
-                return -1;
-            }
-            // Found the thread waiting for this one.
+            // found the thread waiting for this one
             p->threads[i].state = THREAD_RUNNABLE;
-            // todo freethred(&threads[i])
-            freethread(&p->threads[i]);
+            p->threads[i].join = 0;
+        }
+        if (p->threads[i].id == tid) {
+            target = &p->threads[i];
         }
     }
-    // Yield control to the scheduler.
+    if(target == 0 || target->state == THREAD_FREE){
+        return -1;
+    }
+    freethread(target);
     sched();
     return 0;
 }

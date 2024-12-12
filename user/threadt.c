@@ -24,9 +24,12 @@ void *my_thread(void *arg) {
 }
 
 int main(int argc, char *argv[]) {
-    int ta = create_thread(my_thread, (void *) &a);
-    int tb = create_thread(my_thread, (void *) &b);
-    int tc = create_thread(my_thread, (void *) &c);
+    void * astack = malloc(THREAD_STACK_SIZE);
+    void * bstack = malloc(THREAD_STACK_SIZE);
+    void * cstack = malloc(THREAD_STACK_SIZE);
+    int ta = create_thread(my_thread, (void *) &a,astack);
+    int tb = create_thread(my_thread, (void *) &b,bstack);
+    int tc = create_thread(my_thread, (void *) &c,cstack);
     join_thread(ta);
     join_thread(tb);
     join_thread(tc);
