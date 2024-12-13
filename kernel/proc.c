@@ -31,6 +31,8 @@ extern char trampoline[]; // trampoline.S
 // must be acquired before any p->lock.
 struct spinlock wait_lock;
 
+const char *threadstate[] = { "THREAD_FREE", "THREAD_RUNNABLE", "THREAD_RUNNING", "THREAD_JOINED" };
+
 // Allocate a page for each process's kernel stack.
 // Map it high in memory, followed by an invalid
 // guard page.
@@ -868,7 +870,7 @@ join_thread(int tid)
     }
     caller->join = tid;
     caller->state = THREAD_JOINED;
-    sched();
+    yield();
     return 0;
 }
 
@@ -889,7 +891,8 @@ int exit_t(int tid, struct proc *p){
         return -1;
     }
     freethread(target);
-    sched();
+    printf("this is ended thread status while exiting: %s\n", threadstate[target->state]);
+    yield();
     return 0;
 }
 

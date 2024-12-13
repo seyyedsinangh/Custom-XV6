@@ -70,6 +70,7 @@ usertrap(void)
 
   struct proc *p = myproc();
   struct thread *t = p->current_thread;
+  const char *threadstate[] = { "THREAD_FREE", "THREAD_RUNNABLE", "THREAD_RUNNING", "THREAD_JOINED" };
   
   // save user program counter.
   p->trapframe->epc = r_sepc();
@@ -90,12 +91,12 @@ usertrap(void)
     syscall();
   } else if((which_dev = devintr()) != 0){
     // ok
-  } else if (t && r_sepc() == (uint64)-1) {
+  } else if (r_sepc() == 0xfffffffffffffffe) {
     exit_thread(-1);
   } else {
     add_report_trap();
     printf("usertrap(): unexpected scause 0x%lx pid=%d\n", r_scause(), p->pid);
-    printf("            sepc=0x%lx stval=0x%lx\n", r_sepc(), r_stval());
+    printf("            sepc=0x%lx stval=0x%lx  tid:%d state:%s\n", r_sepc(), r_stval(),t->id,threadstate[t->state]);
     setkilled(p);
   }
   if(killed(p))
