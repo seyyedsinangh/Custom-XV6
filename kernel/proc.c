@@ -842,7 +842,7 @@ int create_thread(void (*start_routine) (void*), void *arg, void *pstack) {
     memset(t->trapframe, 0, sizeof(struct trapframe));
     *(t->trapframe) = *(p->trapframe);
     t->trapframe->epc = (uint64)start_routine;
-    t->trapframe->sp = (uint64) pstack + THREAD_STACK_SIZE;
+    t->trapframe->sp = (uint64) pstack;
     t->trapframe->a0 = (uint64)arg;
     t->trapframe->ra = (uint64)(-1);
     t->id = t - p->threads + 1;
