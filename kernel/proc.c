@@ -480,33 +480,44 @@ scheduler(void)
         int found = 0;
         for(p = proc; p < &proc[NPROC]; p++) {
             acquire(&p->lock);
-            if(p->current_thread == NULL && p->state == RUNNABLE) {
+            if(p->state == RUNNABLE) {
                 // Switch to chosen process.  It is the process's job
                 // to release its lock and then reacquire it
                 // before jumping back to us.
                 p->state = RUNNING;
                 c->proc = p;
-                p->current_thread = NULL;
-                swtch(&c->context, &p->context);
+                if(p->current_thread != NULL) {
+                    if(p->current_thread->state != THREAD_FREE) {
+                        *(p->current_thread->trapframe) = *(p->trapframe);
+                    }
+                    for (t = p->threads; t < &p->threads[MAX_THREAD]; t++) {
+                        p->state = RUNNING;
+                        c->proc = p;
+
+                        if (t->state == THREAD_RUNNABLE) {
+                            t->state = THREAD_RUNNING;
+                            *(p->trapframe) = *(t->trapframe);
+                            p->current_thread = t;
+                            swtch(&c->context, &p->context);
+                            if (t->state == THREAD_RUNNING) {
+                                t->state = THREAD_RUNNABLE;
+                            }
+                            if (t->state != THREAD_FREE) {
+                                *(t->trapframe) = *(p->trapframe);
+                            }
+                        }
+                    }
+                } else {
+                    swtch(&c->context, &p->context);
+                }
 
                 // Process is done running for now.
                 // It should have changed its p->state before coming back.
+                if (p->state == RUNNING) {
+                    p->state = RUNNABLE;
+                }
                 c->proc = 0;
                 found = 1;
-            }
-            if(!found) {
-                for (t = p->threads; t < &p->threads[MAX_THREAD]; t++) {
-                    if (t->state == THREAD_RUNNABLE) {
-                        t->state = THREAD_RUNNING;
-                        c->proc = p;
-                        p->current_thread = t;
-
-                        swtch(&c->context, (struct context *)t->trapframe);
-
-                        c->proc = 0;
-                        found = 1;
-                    }
-                }
             }
             release(&p->lock);
         }
@@ -827,7 +838,7 @@ int create_thread(void (*start_routine) (void*), void *arg, void *pstack) {
         return -1;
     }
     memset(t->trapframe, 0, sizeof(struct trapframe));
-    *(t->trapframe) = *(p->current_thread->trapframe);
+    *(t->trapframe) = *(p->trapframe);
     t->trapframe->epc = (uint64)start_routine;
     t->trapframe->sp = (uint64) pstack + THREAD_STACK_SIZE;
     t->trapframe->a0 = (uint64)arg;
