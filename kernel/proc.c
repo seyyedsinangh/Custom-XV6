@@ -473,6 +473,7 @@ scheduler(void)
     struct thread *t;
 
     c->proc = 0;
+
     for(;;){
         // The most recent process to run may have had interrupts
         // turned off; enable them to avoid a deadlock if all
@@ -501,6 +502,9 @@ scheduler(void)
                             *(p->trapframe) = *(t->trapframe);
                             p->current_thread = t;
                             swtch(&c->context, &p->context);
+                            if (p->state == ZOMBIE || p->state == UNUSED) {
+                                break;
+                            }
                             if (t->state == THREAD_RUNNING) {
                                 t->state = THREAD_RUNNABLE;
                             }
@@ -891,7 +895,7 @@ int exit_t(int tid, struct proc *p){
         return -1;
     }
     freethread(target);
-    printf("this is ended thread status while exiting: %s\n", threadstate[target->state]);
+    printf("This is ended thread: (tid:%d,pid:%d)\n", tid, p->pid);
     yield();
     return 0;
 }
