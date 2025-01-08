@@ -90,6 +90,25 @@ struct thread {
     int join;
 };
 
+struct cpu_usage {
+    uint sum_of_ticks;
+    uint start_tick;
+    uint quota;
+};
+
+struct proc_info {
+    char name[16];
+    int pid;
+    int ppid;
+    enum procstate state;
+    struct cpu_usage usage;
+};
+
+struct top {
+    int count;
+    struct proc_info processes[NPROC];
+};
+
 // Per-process state
 struct proc {
   struct spinlock lock;
@@ -116,4 +135,6 @@ struct proc {
 
   struct thread threads[MAX_THREAD];
   struct thread *current_thread;
+
+  struct cpu_usage usage_time;
 };
