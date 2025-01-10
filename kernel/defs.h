@@ -113,6 +113,8 @@ int             report_traps(struct report_traps*);
 int             create_thread(void (*start_routine) (void*), void *arg, void *pstack);
 int             join_thread(int tid);
 int             exit_thread(int tid);
+int             cpu_used();
+int             set_cpu_quota(int pid, int quota);
 
 
 // swtch.S

@@ -136,5 +136,5 @@ struct proc {
   struct thread threads[MAX_THREAD];
   struct thread *current_thread;
 
-  struct cpu_usage usage_time;
+  struct cpu_usage *usage_time;
 };

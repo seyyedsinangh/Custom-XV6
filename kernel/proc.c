@@ -142,6 +142,15 @@ allocproc(void)
         return 0;
     }
 
+    // Allocate a cpu_usage struct.
+    if((p->usage_time = (struct cpu_usage *)kalloc()) == 0){
+        freeproc(p);
+        release(&p->lock);
+        return 0;
+    }
+    p->usage_time->start_tick = 0;
+
+
     // An empty user page table.
     p->pagetable = proc_pagetable(p);
     if(p->pagetable == 0){
@@ -177,6 +186,9 @@ freeproc(struct proc *p)
     if(p->trapframe)
         kfree((void*)p->trapframe);
     p->trapframe = 0;
+    if(p->usage_time)
+        kfree((void*)p->usage_time);
+    p->usage_time = 0;
     if(p->pagetable)
         proc_freepagetable(p->pagetable, p->sz);
     p->pagetable = 0;
@@ -501,6 +513,7 @@ scheduler(void)
                             t->state = THREAD_RUNNING;
                             *(p->trapframe) = *(t->trapframe);
                             p->current_thread = t;
+                            p->usage_time->start_tick = ticks;
                             swtch(&c->context, &p->context);
                             if (p->state == ZOMBIE || p->state == UNUSED) {
                                 break;
@@ -514,6 +527,7 @@ scheduler(void)
                         }
                     }
                 } else {
+                    p->usage_time->start_tick = ticks;
                     swtch(&c->context, &p->context);
                 }
 
@@ -912,4 +926,30 @@ exit_thread(int tid)
     }
 }
 
+int cpu_used() {
+    struct proc *p = myproc();
+    return (int) p->usage_time->sum_of_ticks;
+}
 
+// 0 success, -1 pid is not child of running process, -2 pid not found or not used
+int set_cpu_quota(int pid, int quota) {
+    struct proc *p = myproc();
+    acquire(&p->lock);
+    int father_pid = p->pid;
+    release(&p->lock);
+    for(p = proc; p < &proc[NPROC]; p++){
+        if(p->state == UNUSED) continue;
+        acquire(&p->lock);
+        int pid_to_check = p->pid;
+        release(&p->lock);
+        // checking if given pid is the child of running process
+        if (pid_to_check == pid) {
+            if (is_father(father_pid, p)) {
+                p->usage_time->quota = (uint) quota;
+                return 0;
+            }
+            return -1;
+        }
+    }
+    return -2;
+}
