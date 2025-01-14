@@ -155,3 +155,18 @@ sys_exit_thread(void)
     return res;
 }
 
+uint64
+sys_cpu_used(void)
+{
+    return cpu_used();
+}
+
+uint64
+sys_set_cpu_quota(void) {
+    int pid;
+    int quota;
+    argint(0, &pid);
+    argint(1, &quota);
+    int res = set_cpu_quota(pid, quota);
+    return res;
+}

@@ -70,6 +70,9 @@ usertrap(void)
 
   struct proc *p = myproc();
 
+  uint cpu_ticks = ticks - p->usage_time->start_tick;
+  p->usage_time->sum_of_ticks += cpu_ticks;
+
   // save user program counter.
   p->trapframe->epc = r_sepc();
   
@@ -102,6 +105,8 @@ usertrap(void)
   // give up the CPU if this is a timer interrupt.
   if(which_dev == 2)
     yield();
+
+  p->usage_time->start_tick = ticks;
 
   usertrapret();
 }
