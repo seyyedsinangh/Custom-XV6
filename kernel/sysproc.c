@@ -170,3 +170,17 @@ sys_set_cpu_quota(void) {
     int res = set_cpu_quota(pid, quota);
     return res;
 }
+
+uint64
+sys_top(void) {
+    printf("this is sys_top!\n");
+    struct top *top;
+    struct top ktop;
+    argaddr(0, (uint64 *)&top);
+    struct proc *p = myproc();
+    copyin(p->pagetable, (char *)top, (uint64)&ktop, sizeof(ktop));
+    int res = top_proc(&ktop);
+    copyout(p->pagetable, (uint64)top, (char *)&ktop, sizeof(ktop));
+    return res;
+
+}

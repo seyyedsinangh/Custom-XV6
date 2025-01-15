@@ -953,3 +953,8 @@ int set_cpu_quota(int pid, int quota) {
     }
     return -2;
 }
+
+int top_proc(struct top* top_struct) {
+    printf("proc.c top!\n");
+    return 0;
+}
