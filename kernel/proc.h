@@ -96,7 +96,7 @@ struct cpu_usage {
     uint quota;
 };
 
-struct proc_info {
+struct proc_info_top {
     char name[16];
     int pid;
     int ppid;
@@ -106,7 +106,7 @@ struct proc_info {
 
 struct top {
     int count;
-    struct proc_info processes[NPROC];
+    struct proc_info_top processes[NPROC];
 };
 
 // Per-process state

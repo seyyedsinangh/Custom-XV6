@@ -149,6 +149,8 @@ allocproc(void)
         return 0;
     }
     p->usage_time->start_tick = 0;
+    p->usage_time->sum_of_ticks = 0;
+    p->usage_time->quota = 4000000000;
 
 
     // An empty user page table.
@@ -529,6 +531,7 @@ scheduler(void)
                 } else {
                     p->usage_time->start_tick = ticks;
                     swtch(&c->context, &p->context);
+                    if (p->pid > 2) printf("%x\n", p->usage_time->sum_of_ticks);
                 }
 
                 // Process is done running for now.
