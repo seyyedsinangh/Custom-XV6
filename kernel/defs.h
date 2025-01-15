@@ -10,6 +10,7 @@ struct stat;
 struct superblock;
 struct child_processes;
 struct report_traps;
+struct top;
 
 // bio.c
 void            binit(void);
@@ -116,6 +117,7 @@ int             exit_thread(int tid);
 int             cpu_used();
 int             set_cpu_quota(int pid, int quota);
 int             fork_deadline(int deadline);
+int             top_proc(struct top* top_struct);
 
 
 // swtch.S

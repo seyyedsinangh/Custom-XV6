@@ -587,6 +587,7 @@ scheduler(void)
     struct proc *p;
     struct cpu *c = mycpu();
     struct thread *t;
+
     c->proc = 0;
     struct PriorityQueue *pointer_pq = &pq;
     struct Queue *pointer_q = &q;
@@ -595,6 +596,7 @@ scheduler(void)
         // turned off; enable them to avoid a deadlock if all
         // processes are waiting.
         intr_on();
+
         int found = 0;
         struct proc *chosen_p = NULL;
         for (p = proc; p < &proc[NPROC]; p++) {
@@ -1164,4 +1166,9 @@ fork_deadline(int deadline)
     release(&np->lock);
 
     return pid;
+}
+
+int top_proc(struct top* top_struct) {
+    printf("proc.c top!\n");
+    return 0;
 }

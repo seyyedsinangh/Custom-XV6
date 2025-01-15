@@ -28,3 +28,4 @@
 #define SYS_cpu_used 27
 #define SYS_set_cpu_quota 28
 #define SYS_fork_deadline 29
+#define SYS_top_proc 30
