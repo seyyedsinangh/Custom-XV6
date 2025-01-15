@@ -94,6 +94,7 @@ struct cpu_usage {
     uint sum_of_ticks;
     uint start_tick;
     uint quota;
+    uint last_sched_tick;
 };
 
 struct proc_info_top {

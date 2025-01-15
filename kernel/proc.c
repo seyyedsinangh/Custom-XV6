@@ -151,6 +151,7 @@ allocproc(void)
     p->usage_time->start_tick = 0;
     p->usage_time->sum_of_ticks = 0;
     p->usage_time->quota = 4000000000;
+    p->usage_time->last_sched_tick = 0;
 
 
     // An empty user page table.
@@ -515,8 +516,11 @@ scheduler(void)
                             t->state = THREAD_RUNNING;
                             *(p->trapframe) = *(t->trapframe);
                             p->current_thread = t;
-                            p->usage_time->start_tick = ticks;
+                            if (p->usage_time->start_tick == 0) p->usage_time->start_tick = ticks;
+                            p->usage_time->last_sched_tick = ticks;
                             swtch(&c->context, &p->context);
+                            uint cpu_ticks = ticks - p->usage_time->last_sched_tick;
+                            p->usage_time->sum_of_ticks += cpu_ticks;
                             if (p->state == ZOMBIE || p->state == UNUSED) {
                                 break;
                             }
@@ -529,9 +533,12 @@ scheduler(void)
                         }
                     }
                 } else {
-                    p->usage_time->start_tick = ticks;
+                    if (p->usage_time->start_tick == 0) p->usage_time->start_tick = ticks;
+                    p->usage_time->last_sched_tick = ticks;
                     swtch(&c->context, &p->context);
-                    if (p->pid > 2) printf("%x\n", p->usage_time->sum_of_ticks);
+                    uint cpu_ticks = ticks - p->usage_time->last_sched_tick;
+                    p->usage_time->sum_of_ticks += cpu_ticks;
+//                    if (p->pid > 2) printf("%x\n", p->usage_time->sum_of_ticks);
                 }
 
                 // Process is done running for now.
