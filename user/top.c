@@ -20,16 +20,21 @@ int main() {
 
     int id = fork();
     if (id == 0) {
+
         for (int i = 0; i < 10000; ++i) {
 
         }
+        top_func(top_struct);
+//        printf("%d", top_struct->count);
+
     } else {
         for (int i = 0; i < 10; ++i) {
 
         }
-        top_proc(top_struct);
+
         sleep(10);
     }
+
 
 //    printf("from user!\n");
 //    printf("number of process:%d\nPID\t\tPPID\t\tSTATE\t\tNAME\t\tUSAGE\\t\n",top_struct->count);

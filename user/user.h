@@ -32,7 +32,7 @@ int report_traps(struct report_traps*);
 int create_thread(void* (void*), void *, void *);
 int join_thread(int);
 int exit_thread(int);
-int top_proc(struct top *);
+int top_func(struct top* top_struct);
 
 // ulib.c
 int stat(const char*, struct stat*);
