@@ -14,3 +14,4 @@
 #define USERSTACK    1     // user stack pages
 #define MAX_THREAD   4     // maximum number of threads for a process
 #define THREAD_STACK_SIZE   512
+#define MAX_UINT   4000000000

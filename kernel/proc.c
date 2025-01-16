@@ -8,12 +8,18 @@
 #include <stddef.h>
 #include "child_processes.h"
 #include "report_traps.h"
+#include "queue.h"
+#include "priority_queue.h"
 
 struct report_list _internal_report_list = {.numberOfReports=0,.writeIndex=0};
 
 struct cpu cpus[NCPU];
 
 struct proc proc[NPROC];
+
+struct PriorityQueue pq;
+
+struct Queue q;
 
 struct proc *initproc;
 
@@ -67,6 +73,9 @@ procinit(void)
             t->state = THREAD_FREE;
         }
     }
+
+    pq_init(&pq);
+    initializeQueue(&q);
 }
 
 // Must be called with interrupts disabled,
@@ -149,6 +158,10 @@ allocproc(void)
         return 0;
     }
     p->usage_time->start_tick = 0;
+    p->usage_time->sum_of_ticks = 0;
+    p->usage_time->quota = MAX_UINT;
+    p->usage_time->last_sched_tick = 0;
+    p->usage_time->deadline = MAX_UINT;
 
 
     // An empty user page table.
@@ -477,70 +490,218 @@ wait(uint64 addr)
 //  - swtch to start running that process.
 //  - eventually that process transfers control
 //    via swtch back to the scheduler.
+//void
+//scheduler(void)
+//{
+//    struct proc *p;
+//    struct cpu *c = mycpu();
+//    struct thread *t;
+//
+//    c->proc = 0;
+//
+//    for(;;){
+//        // The most recent process to run may have had interrupts
+//        // turned off; enable them to avoid a deadlock if all
+//        // processes are waiting.
+//        intr_on();
+//
+//        int found = 0;
+//        for(p = proc; p < &proc[NPROC]; p++) {
+//            acquire(&p->lock);
+//            if(p->state == RUNNABLE) {
+//                // Switch to chosen process.  It is the process's job
+//                // to release its lock and then reacquire it
+//                // before jumping back to us.
+//                p->state = RUNNING;
+//                c->proc = p;
+//                if(p->current_thread != NULL) {
+//                    if(p->current_thread->state != THREAD_FREE) {
+//                        *(p->current_thread->trapframe) = *(p->trapframe);
+//                    }
+//                    for (t = p->threads; t < &p->threads[MAX_THREAD]; t++) {
+//                        p->state = RUNNING;
+//                        c->proc = p;
+//
+//                        if (t->state == THREAD_RUNNABLE) {
+//                            t->state = THREAD_RUNNING;
+//                            *(p->trapframe) = *(t->trapframe);
+//                            p->current_thread = t;
+//
+//                            if (p->usage_time->start_tick == 0) p->usage_time->start_tick = ticks;
+//                            p->usage_time->last_sched_tick = ticks;
+//
+//                            swtch(&c->context, &p->context);
+//
+//                            uint cpu_ticks = ticks - p->usage_time->last_sched_tick;
+//                            p->usage_time->sum_of_ticks += cpu_ticks;
+//
+//                            if (p->state == ZOMBIE || p->state == UNUSED) {
+//                                break;
+//                            }
+//                            if (t->state == THREAD_RUNNING) {
+//                                t->state = THREAD_RUNNABLE;
+//                            }
+//                            if (t->state != THREAD_FREE) {
+//                                *(t->trapframe) = *(p->trapframe);
+//                            }
+//                        }
+//                    }
+//                } else {
+//                    if (p->usage_time->start_tick == 0) p->usage_time->start_tick = ticks;
+//                    p->usage_time->last_sched_tick = ticks;
+//
+//                    swtch(&c->context, &p->context);
+//                    uint cpu_ticks = ticks - p->usage_time->last_sched_tick;
+//                    p->usage_time->sum_of_ticks += cpu_ticks;
+//
+//                }
+//
+//                // Process is done running for now.
+//                // It should have changed its p->state before coming back.
+//                if (p->state == RUNNING) {
+//                    p->state = RUNNABLE;
+//                }
+//                c->proc = 0;
+//                found = 1;
+//            }
+//            release(&p->lock);
+//        }
+//        if(found == 0) {
+//            // nothing to run; stop running on this core until an interrupt.
+//            intr_on();
+//            asm volatile("wfi");
+//        }
+//    }
+//}
+
+// Per-CPU process scheduler.
+// Each CPU calls scheduler() after setting itself up.
+// Scheduler never returns.  It loops, doing:
+//  - choose a process to run.
+//  - swtch to start running that process.
+//  - eventually that process transfers control
+//    via swtch back to the scheduler.
 void
 scheduler(void)
 {
     struct proc *p;
     struct cpu *c = mycpu();
     struct thread *t;
-
     c->proc = 0;
-
-    for(;;){
+    struct PriorityQueue *pointer_pq = &pq;
+    struct Queue *pointer_q = &q;
+    for(;;) {
         // The most recent process to run may have had interrupts
         // turned off; enable them to avoid a deadlock if all
         // processes are waiting.
         intr_on();
-
         int found = 0;
-        for(p = proc; p < &proc[NPROC]; p++) {
+        struct proc *chosen_p = NULL;
+        for (p = proc; p < &proc[NPROC]; p++) {
+            acquire(&pointer_pq->lock);
             acquire(&p->lock);
-            if(p->state == RUNNABLE) {
-                // Switch to chosen process.  It is the process's job
-                // to release its lock and then reacquire it
-                // before jumping back to us.
-                p->state = RUNNING;
-                c->proc = p;
-                if(p->current_thread != NULL) {
-                    if(p->current_thread->state != THREAD_FREE) {
-                        *(p->current_thread->trapframe) = *(p->trapframe);
-                    }
-                    for (t = p->threads; t < &p->threads[MAX_THREAD]; t++) {
-                        p->state = RUNNING;
-                        c->proc = p;
+            pq_check_and_push(pointer_pq, p);
+            release(&p->lock);
+            release(&pointer_pq->lock);
+        }
+        int flag = 0;
+        while (flag == 0) {
+            acquire(&pointer_pq->lock);
+            chosen_p = pq_pop(pointer_pq);
+            if (chosen_p == NULL) {
+                release(&pointer_pq->lock);
+                break;
+            }
+            acquire(&chosen_p->lock);
+            if (ticks >= chosen_p->usage_time->deadline) chosen_p->state = DROPPED;
+            else flag = 1;
+            release(&chosen_p->lock);
+            release(&pointer_pq->lock);
+        }
+        if (chosen_p == NULL) {
+            acquire(&pointer_q->lock);
+            chosen_p = pop(pointer_q);
+            release(&pointer_q->lock);
+        }
+        if (chosen_p != NULL) {
+            // Switch to chosen process.  It is the process's job
+            // to release its lock and then reacquire it
+            // before jumping back to us.
+            p = chosen_p;
+            acquire(&p->lock);
+            p->state = RUNNING;
+            c->proc = p;
+            if (p->current_thread != NULL) {
+                if (p->current_thread->state != THREAD_FREE) {
+                    *(p->current_thread->trapframe) = *(p->trapframe);
+                }
 
-                        if (t->state == THREAD_RUNNABLE) {
-                            t->state = THREAD_RUNNING;
-                            *(p->trapframe) = *(t->trapframe);
-                            p->current_thread = t;
-                            p->usage_time->start_tick = ticks;
-                            swtch(&c->context, &p->context);
-                            if (p->state == ZOMBIE || p->state == UNUSED) {
-                                break;
-                            }
-                            if (t->state == THREAD_RUNNING) {
-                                t->state = THREAD_RUNNABLE;
-                            }
-                            if (t->state != THREAD_FREE) {
-                                *(t->trapframe) = *(p->trapframe);
-                            }
+                for (t = p->threads; t < &p->threads[MAX_THREAD]; t++) {
+                    if (t->state == THREAD_RUNNABLE) {
+                        t->state = THREAD_RUNNING;
+                        *(p->trapframe) = *(t->trapframe);
+                        p->current_thread = t;
+
+                        if (p->usage_time->start_tick == 0) p->usage_time->start_tick = ticks;
+                        p->usage_time->last_sched_tick = ticks;
+
+                        swtch(&c->context, &p->context);
+
+                        uint cpu_ticks = ticks - p->usage_time->last_sched_tick;
+                        p->usage_time->sum_of_ticks += cpu_ticks;
+                        if (ticks >= p->usage_time->deadline &&
+                            (p->state == RUNNABLE || p->state == RUNNABLE)) {
+                            p->state = DROPPED;
+                        } else if (p->usage_time->sum_of_ticks >= p->usage_time->quota &&
+                            (p->state == RUNNABLE || p->state == RUNNABLE)) {
+                            p->state = PASSED_QUOTA;
+                            acquire(&pointer_q->lock);
+                            enqueue(pointer_q, p);
+                            release(&pointer_q->lock);
+                        }
+
+                        if (p->state == ZOMBIE || p->state == UNUSED) {
+                            break;
+                        }
+                        if (t->state == THREAD_RUNNING) {
+                            t->state = THREAD_RUNNABLE;
+                        }
+
+                        if (t->state != THREAD_FREE) {
+                            *(t->trapframe) = *(p->trapframe);
                         }
                     }
-                } else {
-                    p->usage_time->start_tick = ticks;
-                    swtch(&c->context, &p->context);
                 }
+            } else {
+                if (p->usage_time->start_tick == 0) p->usage_time->start_tick = ticks;
+                p->usage_time->last_sched_tick = ticks;
 
-                // Process is done running for now.
-                // It should have changed its p->state before coming back.
-                if (p->state == RUNNING) {
-                    p->state = RUNNABLE;
+                swtch(&c->context, &p->context);
+
+                uint cpu_ticks = ticks - p->usage_time->last_sched_tick;
+                p->usage_time->sum_of_ticks += cpu_ticks;
+
+                if (ticks >= p->usage_time->deadline &&
+                    (p->state == RUNNABLE || p->state == RUNNABLE)) {
+                    p->state = DROPPED;
+                } else if (p->usage_time->sum_of_ticks >= p->usage_time->quota &&
+                    (p->state == RUNNABLE || p->state == RUNNABLE)) {
+                    p->state = PASSED_QUOTA;
+                    acquire(&pointer_q->lock);
+                    enqueue(pointer_q, p);
+                    release(&pointer_q->lock);
                 }
-                c->proc = 0;
-                found = 1;
             }
+
+            if (p->state == RUNNING) {
+                p->state = RUNNABLE;
+            }
+
+            c->proc = 0;
+            found = 1;
             release(&p->lock);
         }
+
         if(found == 0) {
             // nothing to run; stop running on this core until an interrupt.
             intr_on();
@@ -548,6 +709,7 @@ scheduler(void)
         }
     }
 }
+
 
 // Switch to scheduler.  Must hold only p->lock
 // and have changed proc->state. Saves and restores
@@ -952,4 +1114,54 @@ int set_cpu_quota(int pid, int quota) {
         }
     }
     return -2;
+}
+
+int
+fork_deadline(int deadline)
+{
+    int i, pid;
+    struct proc *np;
+    struct proc *p = myproc();
+
+    // Allocate process.
+    if((np = allocproc()) == 0){
+        return -1;
+    }
+
+    // Copy user memory from parent to child.
+    if(uvmcopy(p->pagetable, np->pagetable, p->sz) < 0){
+        freeproc(np);
+        release(&np->lock);
+        return -1;
+    }
+    np->sz = p->sz;
+
+    // copy saved user registers.
+    *(np->trapframe) = *(p->trapframe);
+
+    // Cause fork to return 0 in the child.
+    np->trapframe->a0 = 0;
+
+    // increment reference counts on open file descriptors.
+    for(i = 0; i < NOFILE; i++)
+        if(p->ofile[i])
+            np->ofile[i] = filedup(p->ofile[i]);
+    np->cwd = idup(p->cwd);
+
+    safestrcpy(np->name, p->name, sizeof(p->name));
+
+    pid = np->pid;
+
+    release(&np->lock);
+
+    acquire(&wait_lock);
+    np->parent = p;
+    release(&wait_lock);
+
+    acquire(&np->lock);
+    np->state = RUNNABLE;
+    np->usage_time->deadline = (uint) deadline;
+    release(&np->lock);
+
+    return pid;
 }
