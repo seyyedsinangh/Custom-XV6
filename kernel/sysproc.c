@@ -180,14 +180,14 @@ sys_fork_deadline(void)
 }
 
 uint64
-sys_top_proc(void) {
+sys_top_func(void) {
     printf("this is sys_top!\n");
     struct top *top;
     struct top ktop;
     argaddr(0, (uint64 *)&top);
     struct proc *p = myproc();
     copyin(p->pagetable, (char *)top, (uint64)&ktop, sizeof(ktop));
-    int res = top_proc(&ktop);
+    int res = top_func(&ktop);
     copyout(p->pagetable, (uint64)top, (char *)&ktop, sizeof(ktop));
     return res;
 
