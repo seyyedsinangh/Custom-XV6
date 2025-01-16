@@ -736,6 +736,10 @@ sched(void)
         panic("sched interruptible");
 
     intena = mycpu()->intena;
+
+    p->usage_time->sum_of_ticks += ticks - p->usage_time->last_sched_tick;
+    p->usage_time->last_sched_tick = ticks;
+
     swtch(&p->context, &mycpu()->context);
     mycpu()->intena = intena;
 }
