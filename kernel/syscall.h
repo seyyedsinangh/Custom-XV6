@@ -26,4 +26,6 @@
 #define SYS_join_thread 25
 #define SYS_exit_thread 26
 #define SYS_cpu_used 27
-#define SYS_top_proc 28
+
+
+#define SYS_top_proc 30

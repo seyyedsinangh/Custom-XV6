@@ -149,6 +149,7 @@ allocproc(void)
         return 0;
     }
     p->usage_time->start_tick = 0;
+    p->usage_time->sum_of_ticks = 0;
 
 
     // An empty user page table.
@@ -975,6 +976,7 @@ int top_proc(struct top* top_struct) {
         release(&wait_lock);
         printf("flag4\n");
         top_struct->processes[i].usage = *p->usage_time;
+        printf("USAGE:%d\n",p->usage_time->sum_of_ticks);
         ++i;
     }
     printf("flag5\n");
