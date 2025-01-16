@@ -649,12 +649,12 @@ scheduler(void)
 
                         swtch(&c->context, &p->context);
 
-                        uint cpu_ticks = ticks - p->usage_time->last_sched_tick;
-                        p->usage_time->sum_of_ticks += cpu_ticks;
-                        if (ticks >= p->usage_time->deadline &&
-                            (p->state == RUNNABLE || p->state == RUNNABLE)) {
-                            p->state = DROPPED;
-                        } else if (p->usage_time->sum_of_ticks >= p->usage_time->quota &&
+//                        uint cpu_ticks = ticks - p->usage_time->last_sched_tick;
+//                        p->usage_time->sum_of_ticks += cpu_ticks;
+//                        if (ticks >= p->usage_time->deadline &&
+//                            (p->state == RUNNABLE || p->state == RUNNABLE)) {
+//                            p->state = DROPPED;
+                        if (p->usage_time->sum_of_ticks >= p->usage_time->quota &&
                             (p->state == RUNNABLE || p->state == RUNNABLE)) {
                             p->state = PASSED_QUOTA;
                             acquire(&pointer_q->lock);
@@ -680,13 +680,13 @@ scheduler(void)
 
                 swtch(&c->context, &p->context);
 
-                uint cpu_ticks = ticks - p->usage_time->last_sched_tick;
-                p->usage_time->sum_of_ticks += cpu_ticks;
+//                uint cpu_ticks = ticks - p->usage_time->last_sched_tick;
+//                p->usage_time->sum_of_ticks += cpu_ticks;
 
-                if (ticks >= p->usage_time->deadline &&
-                    (p->state == RUNNABLE || p->state == RUNNABLE)) {
-                    p->state = DROPPED;
-                } else if (p->usage_time->sum_of_ticks >= p->usage_time->quota &&
+//                if (ticks >= p->usage_time->deadline &&
+//                    (p->state == RUNNABLE || p->state == RUNNABLE)) {
+//                    p->state = DROPPED;
+                if (p->usage_time->sum_of_ticks >= p->usage_time->quota &&
                     (p->state == RUNNABLE || p->state == RUNNABLE)) {
                     p->state = PASSED_QUOTA;
                     acquire(&pointer_q->lock);
@@ -736,6 +736,10 @@ sched(void)
         panic("sched interruptible");
 
     intena = mycpu()->intena;
+
+    p->usage_time->sum_of_ticks += ticks - p->usage_time->last_sched_tick;
+    p->usage_time->last_sched_tick = ticks;
+
     swtch(&p->context, &mycpu()->context);
     mycpu()->intena = intena;
 }

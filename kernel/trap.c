@@ -69,14 +69,19 @@ usertrap(void)
   w_stvec((uint64)kernelvec);
 
   struct proc *p = myproc();
+  p->usage_time->sum_of_ticks += ticks - p->usage_time->last_sched_tick;
+  p->usage_time->last_sched_tick = ticks;
+
+  if (ticks >= p->usage_time->deadline) {
+      p->state = DROPPED;
+      yield();
+  }
 
   // save user program counter.
   p->trapframe->epc = r_sepc();
   
   if(r_scause() == 8){
     // system call
-    uint cpu_ticks = ticks - p->usage_time->last_sched_tick;
-    p->usage_time->sum_of_ticks += cpu_ticks;
 
     if(killed(p))
       exit(-1);
@@ -89,8 +94,6 @@ usertrap(void)
     // so enable only now that we're done with those registers.
     intr_on();
     syscall();
-
-    p->usage_time->last_sched_tick = ticks;
   } else if((which_dev = devintr()) != 0){
     // ok
   } else if (r_sepc() == 0xfffffffffffffffe) {
@@ -107,6 +110,7 @@ usertrap(void)
   if(which_dev == 2)
     yield();
 
+  p->usage_time->last_sched_tick = ticks;
   usertrapret();
 }
 

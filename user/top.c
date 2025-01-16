@@ -21,7 +21,7 @@ int main() {
     int id = fork();
     if (id == 0) {
 
-        for (int i = 0; i < 10000; ++i) {
+        for (int i = 0; i < 1000000000; ++i) {
 
         }
         top_func(top_struct);
