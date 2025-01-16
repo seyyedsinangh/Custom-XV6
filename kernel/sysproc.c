@@ -172,7 +172,7 @@ sys_set_cpu_quota(void) {
 }
 
 uint64
-sys_top(void) {
+sys_top_proc(void) {
     printf("this is sys_top!\n");
     struct top *top;
     struct top ktop;

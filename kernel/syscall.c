@@ -108,7 +108,7 @@ extern uint64 sys_join_thread(void);
 extern uint64 sys_exit_thread(void);
 extern uint64 sys_cpu_used(void);
 extern uint64 sys_set_cpu_quota(void);
-extern uint64 sys_top(void);
+extern uint64 sys_top_proc(void);
 
 // An array mapping syscall numbers from syscall.h
 // to the function that handles the system call.
@@ -141,7 +141,7 @@ static uint64 (*syscalls[])(void) = {
         [SYS_exit_thread] sys_exit_thread,
         [SYS_cpu_used] sys_cpu_used,
         [SYS_cpu_used] sys_set_cpu_quota,
-        [SYS_top] sys_top,
+        [SYS_top_proc] sys_top_proc,
 };
 
 void
