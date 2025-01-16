@@ -604,9 +604,20 @@ scheduler(void)
             release(&p->lock);
             release(&pointer_pq->lock);
         }
-        acquire(&pointer_pq->lock);
-        chosen_p = pq_pop(pointer_pq);
-        release(&pointer_pq->lock);
+        int flag = 0;
+        while (flag == 0) {
+            acquire(&pointer_pq->lock);
+            chosen_p = pq_pop(pointer_pq);
+            if (chosen_p == NULL) {
+                release(&pointer_pq->lock);
+                break;
+            }
+            acquire(&chosen_p->lock);
+            if (ticks >= chosen_p->usage_time->deadline) chosen_p->state = DROPPED;
+            else flag = 1;
+            release(&chosen_p->lock);
+            release(&pointer_pq->lock);
+        }
         if (chosen_p == NULL) {
             acquire(&pointer_q->lock);
             chosen_p = pop(pointer_q);
