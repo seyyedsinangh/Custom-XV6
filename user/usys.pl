@@ -41,3 +41,4 @@ entry("report_traps");
 entry("create_thread");
 entry("join_thread");
 entry("exit_thread");
+entry("top_proc");

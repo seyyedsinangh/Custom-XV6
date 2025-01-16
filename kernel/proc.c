@@ -587,6 +587,7 @@ scheduler(void)
     struct proc *p;
     struct cpu *c = mycpu();
     struct thread *t;
+
     c->proc = 0;
     struct PriorityQueue *pointer_pq = &pq;
     struct Queue *pointer_q = &q;
@@ -595,6 +596,7 @@ scheduler(void)
         // turned off; enable them to avoid a deadlock if all
         // processes are waiting.
         intr_on();
+
         int found = 0;
         struct proc *chosen_p = NULL;
         for (p = proc; p < &proc[NPROC]; p++) {
@@ -1164,4 +1166,52 @@ fork_deadline(int deadline)
     release(&np->lock);
 
     return pid;
+}
+
+int top_proc(struct top* top_struct) {
+    printf("proc.c top!\n");
+    struct proc *p = myproc();
+    printf("flag1\n");
+    int i = 0;
+    for (p = proc; p < &proc[NPROC]; ++p ) {
+        printf("flag2\n");
+        if(p->state == UNUSED){
+            ++i;
+            continue;
+        }
+        printf("flag3\n");
+        top_struct->count ++;
+        strncpy(top_struct->processes[i].name, p->name,16);
+        top_struct->processes[i].state = p->state;
+        top_struct->processes[i].pid = p->pid;
+        acquire(&wait_lock);
+        top_struct->processes[i].ppid = -1;
+        release(&wait_lock);
+        printf("flag4\n");
+        top_struct->processes[i].usage = *p->usage_time;
+        ++i;
+    }
+    printf("flag5\n");
+
+    // sort:
+    int n = top_struct->count;
+    for (i = 1; i < n; ++i) {
+        for (int j = i; j > 0; --j) {
+            if(top_struct->processes[j].usage.sum_of_ticks < top_struct->processes[j - 1].usage.sum_of_ticks){
+                printf("flag6\n");
+                struct proc_info temp = top_struct->processes[j - 1];
+                top_struct->processes[j - 1] = top_struct->processes[j];
+                top_struct->processes[j] = temp;
+            }
+        }
+        printf("flag7\n");
+    }
+
+    printf("from Kernel!\n");
+    printf("number of process:%d\nPID\t\tPPID\t\tSTATE\t\tNAME\t\tUSAGE\\t\n",top_struct->count);
+    for (int j = 0; j < top_struct->count; ++j) {
+        printf("%d\t\t%d\t\t%d\t\t%s\t\t%d\n", top_struct->processes[j].pid,top_struct->processes[j].ppid,top_struct->processes[j].state,top_struct->processes[j].name,top_struct->processes[j].usage.sum_of_ticks);
+    }
+
+    return 0;
 }
