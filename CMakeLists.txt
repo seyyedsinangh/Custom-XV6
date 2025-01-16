@@ -82,3 +82,4 @@ add_executable(xv6_riscv
         LICENSE
         Makefile
         README kernel/child_processes.h user/cps.c kernel/report_traps.h user/reptraps.c user/threadt.c kernel/queue.h kernel/priority_queue.h)
+        README kernel/child_processes.h user/cps.c kernel/report_traps.h user/reptraps.c user/threadt.c user/top.c)
