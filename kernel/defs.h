@@ -117,7 +117,7 @@ int             exit_thread(int tid);
 int             cpu_used();
 int             set_cpu_quota(int pid, int quota);
 int             fork_deadline(int deadline);
-int             top_proc(struct top* top_struct);
+int             top_func(struct top* top_struct);
 
 
 // swtch.S
