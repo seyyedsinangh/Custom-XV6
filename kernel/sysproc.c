@@ -170,3 +170,11 @@ sys_set_cpu_quota(void) {
     int res = set_cpu_quota(pid, quota);
     return res;
 }
+
+uint64
+sys_fork_deadline(void)
+{
+    int deadline;
+    argint(0, &deadline);
+    return fork_deadline(deadline);
+}

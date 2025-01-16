@@ -79,7 +79,7 @@ struct trapframe {
   /* 280 */ uint64 t6;
 };
 
-enum procstate { UNUSED, USED, SLEEPING, RUNNABLE, RUNNING, ZOMBIE, PASSED_QUOTA, CHOSEN_TO_RUN};
+enum procstate { UNUSED, USED, SLEEPING, RUNNABLE, RUNNING, ZOMBIE, PASSED_QUOTA, CHOSEN_TO_RUN, DROPPED};
 
 enum threadstate { THREAD_FREE, THREAD_RUNNABLE, THREAD_RUNNING, THREAD_JOINED };
 
@@ -95,6 +95,7 @@ struct cpu_usage {
     uint start_tick;
     uint quota;
     uint last_sched_tick;
+    uint deadline;
 };
 
 struct proc_info_top {

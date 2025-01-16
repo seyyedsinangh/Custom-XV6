@@ -30,7 +30,10 @@ void pq_push(struct PriorityQueue *pq, struct proc *p) {
     while (i > 0) {
         int parent = (i - 1) / 2;
         if (pq->heap[parent]->usage_time->sum_of_ticks <= pq->heap[i]->usage_time->sum_of_ticks) {
-            break;
+            if (pq->heap[parent]->usage_time->sum_of_ticks == pq->heap[i]->usage_time->sum_of_ticks) {
+                if (pq->heap[parent]->usage_time->deadline <= pq->heap[i]->usage_time->deadline) break;
+            }
+            else break;
         }
         swap(&pq->heap[parent], &pq->heap[i]);
         i = parent;
@@ -53,11 +56,17 @@ struct proc *pq_pop(struct PriorityQueue *pq) {
         int right = 2 * i + 2;
         int smallest = i;
 
-        if (left < pq->size && pq->heap[left]->usage_time->sum_of_ticks < pq->heap[smallest]->usage_time->sum_of_ticks) {
-            smallest = left;
+        if (left < pq->size && pq->heap[left]->usage_time->sum_of_ticks <= pq->heap[smallest]->usage_time->sum_of_ticks) {
+            if (pq->heap[left]->usage_time->sum_of_ticks == pq->heap[smallest]->usage_time->sum_of_ticks) {
+                if (pq->heap[left]->usage_time->deadline < pq->heap[smallest]->usage_time->deadline) smallest = left;
+            }
+            else smallest = left;
         }
-        if (right < pq->size && pq->heap[right]->usage_time->sum_of_ticks < pq->heap[smallest]->usage_time->sum_of_ticks) {
-            smallest = right;
+        if (right < pq->size && pq->heap[right]->usage_time->sum_of_ticks <= pq->heap[smallest]->usage_time->sum_of_ticks) {
+            if (pq->heap[right]->usage_time->sum_of_ticks == pq->heap[smallest]->usage_time->sum_of_ticks) {
+                if (pq->heap[right]->usage_time->deadline < pq->heap[smallest]->usage_time->deadline) smallest = right;
+            }
+            else smallest = right;
         }
 
         if (smallest == i) {
@@ -97,9 +106,10 @@ int pq_check_and_push(struct PriorityQueue *pq, struct proc *p) {
 
     while (i > 0) {
         int parent = (i - 1) / 2;
-        if (pq->heap[parent]->usage_time->sum_of_ticks <= pq->heap[i]->usage_time->sum_of_ticks) {
-            break;
+        if (pq->heap[parent]->usage_time->sum_of_ticks == pq->heap[i]->usage_time->sum_of_ticks) {
+            if (pq->heap[parent]->usage_time->deadline <= pq->heap[i]->usage_time->deadline) break;
         }
+        else break;
         swap(&pq->heap[parent], &pq->heap[i]);
         i = parent;
     }

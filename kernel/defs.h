@@ -115,6 +115,7 @@ int             join_thread(int tid);
 int             exit_thread(int tid);
 int             cpu_used();
 int             set_cpu_quota(int pid, int quota);
+int             fork_deadline(int deadline);
 
 
 // swtch.S
