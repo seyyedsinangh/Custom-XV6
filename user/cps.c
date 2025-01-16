@@ -28,7 +28,7 @@ int main(int argc, char *argv[]){
         printf("Number of children: %d\n", cps.count);
         printf("PID\tPPID\tSTATE\t\tNAME\n");
         for (int i=0; i<cps.count; i++) {
-            struct proc_info pinfo = cps.processes[i];
+            struct proc_info_cps pinfo = cps.processes[i];
             if(pinfo.state==2 || pinfo.state==3) printf("%d\t%d\t%s\t%s\n",pinfo.pid,pinfo.ppid,states[pinfo.state],pinfo.name);
             else printf("%d\t%d\t%s\t\t%s\n",pinfo.pid,pinfo.ppid,states[pinfo.state],pinfo.name);
         }
