@@ -142,6 +142,7 @@ static uint64 (*syscalls[])(void) = {
         [SYS_exit_thread] sys_exit_thread,
         [SYS_cpu_used] sys_cpu_used,
         [SYS_set_cpu_quota] sys_set_cpu_quota,
+        [SYS_fork_deadline] sys_fork_deadline,
         [SYS_top_func] sys_top_func,
 };
 

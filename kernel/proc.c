@@ -1096,6 +1096,7 @@ exit_thread(int tid)
 
 int cpu_used() {
     struct proc *p = myproc();
+    printf("(cpu_used) pid:%d -> quota:%d\n", p->pid, p->usage_time->quota);
     return (int) p->usage_time->sum_of_ticks;
 }
 
@@ -1103,7 +1104,7 @@ int cpu_used() {
 int set_cpu_quota(int pid, int quota) {
     struct proc *p = myproc();
     acquire(&p->lock);
-    int father_pid = p->pid;
+    //int father_pid = p->pid;
     release(&p->lock);
     for(p = proc; p < &proc[NPROC]; p++){
         if(p->state == UNUSED) continue;
@@ -1111,9 +1112,11 @@ int set_cpu_quota(int pid, int quota) {
         int pid_to_check = p->pid;
         release(&p->lock);
         // checking if given pid is the child of running process
+//        printf("pid_to_check(%d) == pid(%d)\n",pid_to_check,pid);
         if (pid_to_check == pid) {
-            if (is_father(father_pid, p)) {
+            if (pid == p->pid) {
                 p->usage_time->quota = (uint) quota;
+//                printf("(proc.c - set_quota) quota:%d\n", p->usage_time->quota);
                 return 0;
             }
             return -1;

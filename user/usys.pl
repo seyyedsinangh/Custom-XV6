@@ -41,4 +41,7 @@ entry("report_traps");
 entry("create_thread");
 entry("join_thread");
 entry("exit_thread");
+entry("fork_deadline");
+entry("set_cpu_quota");
+entry("cpu_used");
 entry("top_func");

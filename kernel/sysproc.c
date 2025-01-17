@@ -176,6 +176,7 @@ sys_fork_deadline(void)
 {
     int deadline;
     argint(0, &deadline);
+    printf("(sysproc) tick: %d\n",ticks);
     return fork_deadline(deadline);
 }
 
