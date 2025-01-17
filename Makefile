@@ -142,6 +142,7 @@ UPROGS=\
 	$U/_cps\
 	$U/_reptraps\
 	$U/_threadt\
+	$U/_sch\
 	$U/_top\
 
 fs.img: mkfs/mkfs README $(UPROGS)
