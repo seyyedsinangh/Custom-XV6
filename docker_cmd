@@ -1,0 +1,1 @@
+docker run -it --rm -v "%cd%:/home/xv6/xv6-riscv" sinasadeghi83/xv6-env:buildx-latest
